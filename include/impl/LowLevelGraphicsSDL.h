@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LOWLEVELGRAPHICS_SDL_H
-#define HPL_LOWLEVELGRAPHICS_SDL_H
+#pragma once
 
 #include <GL/GLee.h>
 
@@ -329,4 +328,3 @@ namespace hpl {
 		void SetVtxBatchStates(tVtxBatchFlag aFlags);
 	};
 };
-#endif // HPL_LOWLEVELGRAPHICS_SDL_H

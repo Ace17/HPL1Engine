@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_OPENAL_SOUND_CHANNEL_H
-#define HPL_OPENAL_SOUND_CHANNEL_H
+#pragma once
 
 #include "sound/SoundChannel.h"
 #include "sound/SoundData.h"
@@ -71,4 +70,3 @@ namespace hpl {
 		float mfVelocity[3];
 	};
 };
-#endif // HPL_OPENAL_CHANNEL_H

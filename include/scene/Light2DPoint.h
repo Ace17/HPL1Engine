@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LIGHTPOINT2D_H
-#define HPL_LIGHTPOINT2D_H
+#pragma once
 
 #include "scene/Light2D.h"
 
@@ -35,4 +34,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_LIGHTPOINT2D_H

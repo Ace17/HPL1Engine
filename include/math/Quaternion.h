@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_QUATERNION_H
-#define HPL_QUATERNION_H
+#pragma once
 
 #include "math/Vector3.h"
 #include "math/Matrix.h"
@@ -56,4 +55,3 @@ namespace hpl {
 	private:
 	};
 };
-#endif // HPL_QUATERNION_H

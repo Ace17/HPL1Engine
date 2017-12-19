@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_VERTEXBUFFER_H
-#define HPL_VERTEXBUFFER_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 #include "math/MathTypes.h"
@@ -165,4 +164,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_RENDERER3D_H

@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_FRUSTUM_H
-#define HPL_FRUSTUM_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "graphics/GraphicsTypes.h"
@@ -117,4 +116,3 @@ namespace hpl {
 		tVector3fVec mvPoints;
 	};
 };
-#endif // HPL_FRUSTUM_H

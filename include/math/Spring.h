@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_SPRING_H
-#define HPL_SPRING_H
+#pragma once
 
 #include "math/MathTypes.h"
 
@@ -55,4 +54,3 @@ namespace hpl {
 	typedef cSpring<float> cSpringf;
 	typedef cSpring<cVector3f> cSpringVec3;
 };
-#endif // HPL_SPRING_H

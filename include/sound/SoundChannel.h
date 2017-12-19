@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_SOUND_CHANNEL_H
-#define HPL_SOUND_CHANNEL_H
+#pragma once
 
 #include <list>
 #include "math/MathTypes.h"
@@ -178,4 +177,3 @@ namespace hpl {
 	typedef std::list<iSoundChannel*> tSoundChannelList;
 	typedef tSoundChannelList::iterator tSoundChannelListIt;
 };
-#endif // HPL_SOUND_CHANNEL_H

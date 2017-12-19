@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_AI_NODE_CONTAINER_H
-#define HPL_AI_NODE_CONTAINER_H
+#pragma once
 
 #include "system/SystemTypes.h"
 #include "math/MathTypes.h"
@@ -293,4 +292,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_AI_NODE_CONTAINER_H

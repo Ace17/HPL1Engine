@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_PHYSICS_BODY_H
-#define HPL_PHYSICS_BODY_H
+#pragma once
 
 #include "scene/Entity3D.h"
 #include "graphics/GraphicsTypes.h"
@@ -331,4 +330,3 @@ namespace hpl {
 		bool mbCollide;
 	};
 };
-#endif // HPL_PHYSICS_BODY_H

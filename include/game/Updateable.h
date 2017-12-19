@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_UPDATEABLE_H
-#define HPL_UPDATEABLE_H
+#pragma once
 
 #include "system/SystemTypes.h"
 
@@ -51,4 +50,3 @@ namespace hpl {
 	};
 };
 
-#endif // HPL_UPDATEABLE_H

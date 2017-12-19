@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_CGPROGRAM_H
-#define HPL_CGPROGRAM_H
+#pragma once
 
 //#include <windows.h>
 #include <GL/GLee.h>
@@ -91,4 +90,3 @@ namespace hpl {
 		static tString msForceVP;
 	};
 };
-#endif // HPL_CGPROGRAM_H

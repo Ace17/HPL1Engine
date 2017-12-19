@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_TILE_H
-#define HPL_TILE_H
+#pragma once
 
 #include <list>
 #include "graphics/GraphicsTypes.h"
@@ -67,4 +66,3 @@ namespace hpl {
 	typedef std::list<cTile*> tTileList;
 	typedef tTileList::iterator tTileListIt;
 };
-#endif // HPL_TILE_H

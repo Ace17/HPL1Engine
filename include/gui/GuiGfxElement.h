@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_GUI_GFX_ELEMENT_H
-#define HPL_GUI_GFX_ELEMENT_H
+#pragma once
 
 #include "gui/GuiTypes.h"
 
@@ -125,4 +124,3 @@ namespace hpl {
 		bool mbFlushed;
 	};
 };
-#endif // HPL_GUI_GFX_ELEMENT_H

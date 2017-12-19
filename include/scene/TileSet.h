@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_TILESET_H
-#define HPL_TILESET_H
+#pragma once
 
 #include <vector>
 #include "scene/TileData.h"
@@ -67,4 +66,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_TILESET_H

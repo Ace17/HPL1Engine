@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef PLATFORM_H_
-#define PLATFORM_H_
+#pragma once
 #include "system/String.h"
 #include <stdio.h>
 #if defined(WIN32)
@@ -33,4 +32,3 @@ namespace hpl {
 	};
 }
 
-#endif /*PLATFORM_H_*/

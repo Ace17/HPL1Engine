@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_PHYSICS_JOINT_BALL_NEWTON_H
-#define HPL_PHYSICS_JOINT_BALL_NEWTON_H
+#pragma once
 
 #include "physics/PhysicsJointBall.h"
 #include "impl/PhysicsJointNewton.h"
@@ -43,4 +42,3 @@ namespace hpl {
 	private:
 	};
 };
-#endif // HPL_PHYSICS_JOINT_BALL_NEWTON_H

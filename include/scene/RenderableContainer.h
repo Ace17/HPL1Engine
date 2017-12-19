@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_RENDERABLE_CONTAINER_H
-#define HPL_RENDERABLE_CONTAINER_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "graphics/GraphicsTypes.h"
@@ -59,4 +58,3 @@ namespace hpl {
 		virtual void Compile()=0;
 	};
 };
-#endif // RENDERABLE_CONTAINER

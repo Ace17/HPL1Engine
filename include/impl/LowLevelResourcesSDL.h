@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LOWLEVELRESOURCES_SDL_H
-#define HPL_LOWLEVELRESOURCES_SDL_H
+#pragma once
 
 #include "resources/LowLevelResources.h"
 #include "impl/LowLevelGraphicsSDL.h"
@@ -43,4 +42,3 @@ namespace hpl {
 		cLowLevelGraphicsSDL *mpLowLevelGraphics;
 	};
 };
-#endif // HPL_LOWLEVELRESOURCES_SDL_H

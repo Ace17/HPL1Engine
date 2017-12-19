@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LOWLEVELPHYSICS_H
-#define HPL_LOWLEVELPHYSICS_H
+#pragma once
 
 #include "system/SystemTypes.h"
 #include "math/MathTypes.h"
@@ -35,4 +34,3 @@ namespace hpl {
 		virtual iPhysicsWorld* CreateWorld()=0;
 	};
 };
-#endif // HPL_LOWLEVELPHYSICS_H

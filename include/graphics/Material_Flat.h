@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_MATERIAL_FLAT_H
-#define HPL_MATERIAL_FLAT_H
+#pragma once
 
 #include "graphics/Material.h"
 
@@ -82,4 +81,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_MATERIAL_FLAT_H

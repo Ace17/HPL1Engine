@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_FRAMETEXTURE_H
-#define HPL_FRAMETEXTURE_H
+#pragma once
 
 #include "resources/FrameBase.h"
 
@@ -40,4 +39,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_FRAMETEXTURE_H

@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LIGHT3D_H
-#define HPL_LIGHT3D_H
+#pragma once
 
 #include <list>
 #include <set>
@@ -222,4 +221,3 @@ namespace hpl {
 	typedef std::list<iLight3D*> tLight3DList;
 	typedef tLight3DList::iterator tLight3DListIt;
 };
-#endif // HPL_LIGHT3D_H

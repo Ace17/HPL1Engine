@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LOWLEVELSOUND_OPENAL_H
-#define HPL_LOWLEVELSOUND_OPENAL_H
+#pragma once
 
 #include "sound/LowLevelSound.h"
 
@@ -75,5 +74,4 @@ namespace hpl
 		cOAL_Effect_Reverb* mpEffect;
 	};
 };
-#endif // HPL_LOWLEVELSOUND_OPENAL_H
 

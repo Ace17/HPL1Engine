@@ -1,9 +1,7 @@
-#ifndef HPL_STDSTR_H
-#define HPL_STDSTR_H
+#pragma once
 
 #include <angelscript.h>
 #include <string>
 
 void RegisterStdString(asIScriptEngine *engine);
 
-#endif

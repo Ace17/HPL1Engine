@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_SCENE_H
-#define HPL_SCENE_H
+#pragma once
 
 #include <list>
 
@@ -157,4 +156,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_SCENE_H

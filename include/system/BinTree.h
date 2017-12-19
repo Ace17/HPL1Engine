@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_BINTREE_H
-#define HPL_BINTREE_H
+#pragma once
 
 #include <list>
 
@@ -236,4 +235,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_BINTREE_H

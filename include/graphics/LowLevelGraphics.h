@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LOWLEVELGRAPHICS_H
-#define HPL_LOWLEVELGRAPHICS_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "system/SystemTypes.h"
@@ -436,4 +435,3 @@ namespace hpl {
 		virtual void SwapBuffers()=0;
 	};
 };
-#endif // HPL_LOWLEVELGRAPHICS_H

@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_MOUSE_H
-#define HPL_MOUSE_H
+#pragma once
 
 #include "input/InputTypes.h"
 #include "input/InputDevice.h"
@@ -64,4 +63,3 @@ namespace hpl {
 
 };
 
-#endif // HPL_MOUSE_H

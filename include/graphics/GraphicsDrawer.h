@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_GRAPHICSDRAWER_H
-#define HPL_GRAPHICSDRAWER_H
+#pragma once
 
 #include <vector>
 #include "graphics/GraphicsTypes.h"
@@ -146,4 +145,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_GRAPHICSDRAWER_H

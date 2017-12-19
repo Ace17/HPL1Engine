@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_PHYSICS_JOINT_HINGE_H
-#define HPL_PHYSICS_JOINT_HINGE_H
+#pragma once
 
 #include "physics/PhysicsJoint.h"
 
@@ -67,4 +66,3 @@ namespace hpl {
 		float mfMinAngle;
 	};
 };
-#endif // HPL_PHYSICS_JOINT_HINGE_H

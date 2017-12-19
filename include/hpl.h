@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_HPL_H
-#define HPL_HPL_H
+#pragma once
 
 #include "system/System.h"
 #include "system/SystemTypes.h"
@@ -190,4 +189,3 @@
 #include "impl/tinyXML/tinyxml.h"
 
 
-#endif // HPL_HPL_H

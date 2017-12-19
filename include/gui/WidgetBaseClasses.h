@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_WIDGET_BASE_CLASSES_H
-#define HPL_WIDGET_BASE_CLASSES_H
+#pragma once
 
 #include "gui/GuiTypes.h"
 
@@ -46,4 +45,3 @@ namespace hpl {
 	//--------------------------------------
 
 };
-#endif // HPL_WIDGET_BASE_CLASSES_H

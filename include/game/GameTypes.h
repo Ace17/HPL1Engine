@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_GAME_TYPES_H
-#define HPL_GAME_TYPES_H
+#pragma once
 
 #include <map>
 
@@ -38,4 +37,3 @@ namespace hpl {
 
 };
 
-#endif // HPL_GAME_TYPES_H

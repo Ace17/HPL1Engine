@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_CHARACTER_BODY_NEWTON_H
-#define HPL_CHARACTER_BODY_NEWTON_H
+#pragma once
 
 #include "physics/CharacterBody.h"
 #include <stddef.h> // size_t
@@ -35,4 +34,3 @@ namespace hpl {
 	private:
 	};
 };
-#endif // HPL_CHARACTER_BODY_NEWTON_H

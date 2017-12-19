@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_GUI_POP_UP_MESSAGE_BOX_H
-#define HPL_GUI_POP_UP_MESSAGE_BOX_H
+#pragma once
 
 #include "gui/GuiPopUp.h"
 
@@ -51,4 +50,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_GUI_POP_UP_MESSAGE_BOX_H

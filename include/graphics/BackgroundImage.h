@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_BACKGROUND_IMAGE_H
-#define HPL_BACKGROUND_IMAGE_H
+#pragma once
 
 #include <map>
 #include "graphics/GraphicsTypes.h"
@@ -52,4 +51,3 @@ namespace hpl {
 	typedef std::map<float,cBackgroundImage*> tBackgroundImageMap;
 	typedef tBackgroundImageMap::iterator tBackgroundImageMapIt;
 };
-#endif // HPL_BACKGROUND_IMAGE_H

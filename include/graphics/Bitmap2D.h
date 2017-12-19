@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_BITMAP2D_H
-#define HPL_BITMAP2D_H
+#pragma once
 
 #include "graphics/LowLevelPicture.h"
 #include "math/MathTypes.h"
@@ -78,4 +77,3 @@ namespace hpl {
 	typedef std::vector<iBitmap2D*>::iterator tBitmap2DVecIt;
 
 };
-#endif // HPL_BITMAP2D_H

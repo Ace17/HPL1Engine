@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_GUI_H
-#define HPL_GUI_H
+#pragma once
 
 #include <map>
 
@@ -156,4 +155,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_GUI_H

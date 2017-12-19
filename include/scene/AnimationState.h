@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_ANIMATION_STATE_H
-#define HPL_ANIMATION_STATE_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "system/SystemTypes.h"
@@ -183,4 +182,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_ANIMATION_STATE_H

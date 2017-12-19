@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_CHARACTER_BODY_H
-#define HPL_CHARACTER_BODY_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "physics/PhysicsWorld.h"
@@ -413,4 +412,3 @@ namespace hpl {
 		std::vector<iPhysicsBody*> mvExtraBodies;
 	};
 };
-#endif // HPL_CHARACTER_BODY_H

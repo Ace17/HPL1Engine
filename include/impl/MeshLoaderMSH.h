@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_MESH_LOADER_MSH_H
-#define HPL_MESH_LOADER_MSH_H
+#pragma once
 
 
 
@@ -66,4 +65,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_MESH_LOADER_MSH_H

@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_MATRIX_H
-#define HPL_MATRIX_H
+#pragma once
 
 #include <math.h>
 #include "Vector3.h"
@@ -292,4 +291,3 @@ template <class T> 	class cMatrix {
 
 };
 
-#endif // HPL_MATRIX_H

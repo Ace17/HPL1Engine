@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_PHYSICS_JOINT_H
-#define HPL_PHYSICS_JOINT_H
+#pragma once
 
 #include <map>
 #include "system/SystemTypes.h"
@@ -312,4 +311,3 @@ namespace hpl {
 		void LimitEffect(cJointLimitEffect *pEffect);
 	};
 };
-#endif // HPL_PHYSICS_JOINT_H

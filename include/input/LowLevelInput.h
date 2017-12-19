@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LOWLEVELINPUT_H
-#define HPL_LOWLEVELINPUT_H
+#pragma once
 
 namespace hpl {
 
@@ -48,4 +47,3 @@ namespace hpl {
 		virtual iKeyboard* CreateKeyboard()=0;
 	};
 };
-#endif // HPL_LOWLEVELINPUT_H

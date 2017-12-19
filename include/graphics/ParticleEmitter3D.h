@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_PARTICLE_EMITTER_3D_H
-#define HPL_PARTICLE_EMITTER_3D_H
+#pragma once
 
 #include "graphics/Renderable.h"
 #include "scene/Entity3D.h"
@@ -176,5 +175,4 @@ namespace hpl {
 	};
 };
 
-#endif // HPL_PARTICLE_EMITTER_3D_H
 

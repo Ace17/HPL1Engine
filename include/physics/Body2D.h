@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_BODY_H
-#define HPL_BODY_H
+#pragma once
 
 #include "math/MathTypes.h"
 
@@ -172,4 +171,3 @@ namespace hpl {
 		void AddPosXY(cVector2f avPosAdd);
 	};
 };
-#endif // HPL_BODY_H

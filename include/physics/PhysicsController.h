@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_PHYSICS_CONTROLLER_H
-#define HPL_PHYSICS_CONTROLLER_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "math/PidController.h"
@@ -228,4 +227,3 @@ namespace hpl {
 		bool mbLogInfo;
 	};
 };
-#endif // HPL_PHYSICS_CONTROLLER_H

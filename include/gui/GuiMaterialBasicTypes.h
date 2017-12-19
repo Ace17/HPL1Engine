@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_GUI_MATERIAL_BASIC_TYPES_H
-#define HPL_GUI_MATERIAL_BASIC_TYPES_H
+#pragma once
 
 #include "gui/GuiMaterial.h"
 
@@ -86,4 +85,3 @@ namespace hpl {
 	//-----------------------------------------
 
 };
-#endif // HPL_GUI_MATERIAL_BASIC_TYPES_H

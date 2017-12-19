@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_IMAGE_ENTITY_H
-#define HPL_IMAGE_ENTITY_H
+#pragma once
 
 #include <vector>
 #include "scene/Entity2D.h"
@@ -128,4 +127,3 @@ namespace hpl {
 	typedef tImageEntityVec::iterator tImageEntityVecIt;
 
 };
-#endif // HPL_IMAGE_ENTITY_H

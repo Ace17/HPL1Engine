@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_WIDGET_LIST_BOX_H
-#define HPL_WIDGET_LIST_BOX_H
+#pragma once
 
 #include "gui/Widget.h"
 #include "gui/WidgetBaseClasses.h"
@@ -88,4 +87,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_WIDGET_LIST_BOX_H

@@ -14,8 +14,7 @@
 // to a normal std::string where the reference counter doesn't have to be manipulated.
 //
 
-#ifndef SCRIPTSTRING_H
-#define SCRIPTSTRING_H
+#pragma once
 
 #include <angelscript.h>
 #include <string>
@@ -57,4 +56,3 @@ void RegisterScriptString_Generic(asIScriptEngine *engine);
 
 END_AS_NAMESPACE
 
-#endif

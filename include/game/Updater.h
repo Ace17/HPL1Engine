@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_UPDATER_H
-#define HPL_UPDATER_H
+#pragma once
 
 #include <map>
 #include <list>
@@ -97,4 +96,3 @@ namespace hpl {
 		tUpdateableList mlstGlobalUpdateableList;
 	};
 };
-#endif // HPL_UPDATER_H

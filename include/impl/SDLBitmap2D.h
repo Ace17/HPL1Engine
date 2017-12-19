@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_SDL_BITMAP2D_H
-#define HPL_SDL_BITMAP2D_H
+#pragma once
 
 #include "graphics/Bitmap2D.h"
 #include "impl/SDLPixelFormat.h"
@@ -61,4 +60,3 @@ namespace hpl {
 		SDL_PixelFormat *mpSDLPixelFmt32;
 	};
 };
-#endif // HPL_SDL_BITMAP2D_H

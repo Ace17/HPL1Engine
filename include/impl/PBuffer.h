@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_P_BUFFER_H
-#define HPL_P_BUFFER_H
+#pragma once
 
 #include <GL/GLee.h>
 #include <vector>
@@ -62,4 +61,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_P_BUFFER_H

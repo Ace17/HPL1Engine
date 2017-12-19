@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_RESOURCES_TYPES_H
-#define HPL_RESOURCES_TYPES_H
+#pragma once
 
 #include <stdio.h>
 
@@ -27,4 +26,3 @@ namespace hpl {
 	typedef FILE tFile;
 
 };
-#endif // HPL_RESOURCES_TYPES_H

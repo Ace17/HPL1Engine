@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LIGHT3D_SPOT_H
-#define HPL_LIGHT3D_SPOT_H
+#pragma once
 
 #include "scene/Light3D.h"
 
@@ -112,4 +111,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_LIGHT3D_SPOT_H

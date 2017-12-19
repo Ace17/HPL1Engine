@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_COLLIDE_SHAPE_NEWTON_H
-#define HPL_COLLIDE_SHAPE_NEWTON_H
+#pragma once
 
 #include <stddef.h> // size_t
 #include <Newton.h>
@@ -59,4 +58,3 @@ namespace hpl {
 		tCollideShapeVec mvSubShapes;
 	};
 };
-#endif // HPL_COLLIDE_SHAPE_NEWTON_H

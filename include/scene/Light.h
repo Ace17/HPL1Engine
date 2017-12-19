@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LIGHT_H
-#define HPL_LIGHT_H
+#pragma once
 
 #include "graphics/GraphicsTypes.h"
 
@@ -145,4 +144,3 @@ namespace hpl {
 		float mfFlickerStateLength;
 	};
 };
-#endif // HPL_LIGHT_H

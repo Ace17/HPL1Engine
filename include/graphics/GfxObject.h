@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_GFX_OBJECT_H
-#define HPL_GFX_OBJECT_H
+#pragma once
 
 #include <vector>
 #include "graphics/GraphicsTypes.h"
@@ -52,4 +51,3 @@ namespace hpl {
 	typedef std::vector<cGfxObject> tGfxObjectVec;
 	typedef tGfxObjectVec::iterator tGfxObjectVecIt;
 };
-#endif // HPL_GFX_OBJECT_H

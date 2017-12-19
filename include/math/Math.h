@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_MATH_H
-#define HPL_MATH_H
+#pragma once
 
 #include "math/MathTypes.h"
 #include "math/BoundingVolume.h"
@@ -486,4 +485,3 @@ namespace hpl {
 };
 
 };
-#endif // HPL_MATH_H

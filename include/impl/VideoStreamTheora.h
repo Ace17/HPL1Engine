@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_VIDEO_STREAM_THEORA_H
-#define HPL_VIDEO_STREAM_THEORA_H
+#pragma once
 
 #include "graphics/VideoStream.h"
 
@@ -106,4 +105,3 @@ namespace hpl {
 	//-----------------------------------------
 
 };
-#endif // HPL_VIDEO_STREAM_THEORA_H

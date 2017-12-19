@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_SCRIPT_H
-#define HPL_SCRIPT_H
+#pragma once
 
 #include "resources/ResourceBase.h"
 #include <angelscript.h>
@@ -245,4 +244,3 @@ namespace hpl {
 		virtual bool Run(int alHandle)=0;
 	};
 };
-#endif // HPL_SCRIPT_H

@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_SECTOR_VISIBILTY_H
-#define HPL_SECTOR_VISIBILTY_H
+#pragma once
 
 #include "math/BoundingVolume.h"
 #include "math/Frustum.h"
@@ -170,4 +169,3 @@ namespace hpl {
 	//----------------------------------------------------
 
 };
-#endif // HPL_SECTOR_VISIBILTY_H

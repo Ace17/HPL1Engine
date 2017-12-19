@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_LIGHT2D_H
-#define HPL_LIGHT2D_H
+#pragma once
 
 #include <list>
 #include "scene/Entity2D.h"
@@ -51,4 +50,3 @@ namespace hpl {
 	typedef std::list<iLight2D*> tLightList;
 	typedef tLightList::iterator tLightListIt;
 };
-#endif // HPL_LIGHT2D_H

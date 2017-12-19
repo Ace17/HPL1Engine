@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_RESOURCE_IMAGE_H
-#define HPL_RESOURCE_IMAGE_H
+#pragma once
 
 #include <vector>
 
@@ -80,4 +79,3 @@ namespace hpl {
 
 };
 
-#endif // HPL_RESOURCE_IMAGE_H

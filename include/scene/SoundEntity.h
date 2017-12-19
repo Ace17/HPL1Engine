@@ -16,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with HPL1 Engine.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef HPL_SOUND_ENTITY_H
-#define HPL_SOUND_ENTITY_H
+#pragma once
 
 #include "scene/Entity3D.h"
 #include "sound/SoundChannel.h"
@@ -165,4 +164,3 @@ namespace hpl {
 	};
 
 };
-#endif // HPL_SOUND_ENTITY_H
