@@ -288,10 +288,8 @@ namespace hpl {
 
 			//Dynamic
 			tRenderableSet *pRenSet = mpPortalContainer->GetGlobalDynamicObjectSet();
-			tRenderableSetIt DynIt = pRenSet->begin();
-			for(;DynIt != pRenSet->end();++DynIt)
+			for(auto pObject : *pRenSet)
 			{
-				iRenderable *pObject = *DynIt;
 				cVector3f vLocalMin = pObject->GetBoundingVolume()->GetMin();
 				cVector3f vLocalMax = pObject->GetBoundingVolume()->GetMax();
 
@@ -300,10 +298,8 @@ namespace hpl {
 
 			//Static
 			tRenderableList *pRenList = mpPortalContainer->GetGlobalStaticObjectList();
-			tRenderableListIt StaticIt = pRenList->begin();
-			for(;StaticIt != pRenList->end();++StaticIt)
+			for(auto pObject : *pRenList)
 			{
-				iRenderable *pObject = *StaticIt;
 				cVector3f vLocalMin = pObject->GetBoundingVolume()->GetMin();
 				cVector3f vLocalMax = pObject->GetBoundingVolume()->GetMax();
 
@@ -324,11 +320,8 @@ namespace hpl {
 	{
 		///////////////////////////////
 		// Save mesh entities
-		tMeshEntityListIt MeshIt = mlstMeshEntities.begin();
-		for(;MeshIt != mlstMeshEntities.end();MeshIt++)
+		for(auto pEntity : mlstMeshEntities)
 		{
-			cMeshEntity *pEntity = *MeshIt;
-
 			if(pEntity->IsSaved())
 			{
 				iSaveData *pData =pEntity->CreateSaveData();
@@ -339,11 +332,8 @@ namespace hpl {
 
 		///////////////////////////////
 		// Save billboards
-		tBillboardListIt BillIt = mlstBillboards.begin();
-		for(;BillIt != mlstBillboards.end();BillIt++)
+		for(auto pEntity : mlstBillboards)
 		{
-			cBillboard *pEntity = *BillIt;
-
 			if(pEntity->IsSaved())
 			{
 				iSaveData *pData =pEntity->CreateSaveData();
@@ -354,11 +344,8 @@ namespace hpl {
 
 		///////////////////////////////
 		// Save lights
-		tLight3DListIt LightIt = mlstLights.begin();
-		for(;LightIt != mlstLights.end();LightIt++)
+		for(auto pEntity : mlstLights)
 		{
-			iLight3D *pEntity = *LightIt;
-
 			if(pEntity->IsSaved())
 			{
 				iSaveData *pData =pEntity->CreateSaveData();
@@ -369,11 +356,8 @@ namespace hpl {
 
 		///////////////////////////////
 		// Save sounds entities
-		tSoundEntityListIt SoundIt = mlstSoundEntities.begin();
-		for(;SoundIt !=  mlstSoundEntities.end();SoundIt++)
+		for(auto pEntity : mlstSoundEntities)
 		{
-			cSoundEntity *pEntity = *SoundIt;
-
 			if(pEntity->IsSaved())
 			{
 				iSaveData *pData =pEntity->CreateSaveData();
@@ -384,11 +368,8 @@ namespace hpl {
 
 		///////////////////////////////
 		// Save particle systems
-		tParticleSystem3DListIt PSIt = mlstParticleSystems.begin();
-		for(;PSIt !=  mlstParticleSystems.end();PSIt++)
+		for(auto pEntity : mlstParticleSystems)
 		{
-			cParticleSystem3D *pEntity = *PSIt;
-
 			if(pEntity->IsSaved())
 			{
 				iSaveData *pData =pEntity->CreateSaveData();
@@ -505,11 +486,10 @@ namespace hpl {
 
 	cMeshEntity* cWorld3D::GetMeshEntity(const tString& asName)
 	{
-		tMeshEntityListIt It=mlstMeshEntities.begin();
-		for(;It != mlstMeshEntities.end();++It)
+		for(auto pEntity : mlstMeshEntities)
 		{
-			if((*It)->GetName() == asName){
-				return *It;
+			if(pEntity->GetName() == asName){
+				return pEntity;
 			}
 		}
 		return NULL;
@@ -526,11 +506,8 @@ namespace hpl {
 
 	void cWorld3D::DrawMeshBoundingBoxes(const cColor &aColor, bool abStatic)
 	{
-		tMeshEntityListIt It=mlstMeshEntities.begin();
-		for(;It != mlstMeshEntities.end();++It)
+		for(auto pEntity : mlstMeshEntities)
 		{
-			cMeshEntity *pEntity = *It;
-
 			if(abStatic==false && pEntity->IsStatic()) continue;
 
 			cBoundingVolume *pBV = pEntity->GetBoundingVolume();
@@ -591,11 +568,10 @@ namespace hpl {
 
 	iLight3D* cWorld3D::GetLight(const tString& asName)
 	{
-		tLight3DListIt LightIt=mlstLights.begin();
-		for(;LightIt !=mlstLights.end();++LightIt)
+		for(auto pLight : mlstLights)
 		{
-			if((*LightIt)->GetName() == asName){
-				return *LightIt;
+			if(pLight->GetName() == asName){
+				return pLight;
 			}
 		}
 		return NULL;
@@ -739,10 +715,9 @@ namespace hpl {
 
 	bool cWorld3D::ParticleSystemExists(cParticleSystem3D* apPS)
 	{
-		tParticleSystem3DListIt it = mlstParticleSystems.begin();
-		for(; it != mlstParticleSystems.end(); ++it)
+		for(auto pPS : mlstParticleSystems)
 		{
-			if(apPS == *it) return true;
+			if(apPS == pPS) return true;
 		}
 		return false;
 	}
@@ -892,10 +867,8 @@ namespace hpl {
 
 		//////////////////////////////////
 		//See if the container is allready loaded.
-		tAINodeContainerListIt it = mlstAINodeContainers.begin();
-		for(; it != mlstAINodeContainers.end(); ++it)
+		for(auto pCont : mlstAINodeContainers)
 		{
-			cAINodeContainer* pCont = *it;
 			if(pCont->GetName() == asName)
 			{
 				pContainer = pCont;
@@ -937,10 +910,8 @@ namespace hpl {
 			pContainer->ReserveSpace(pTempCont->mlstNodes.size());
 
 			//Add nodes to container
-			tTempAiNodeListIt NodeIt = pTempCont->mlstNodes.begin();
-			for(; NodeIt != pTempCont->mlstNodes.end(); ++NodeIt)
+			for(auto pNode : pTempCont->mlstNodes)
 			{
-				cTempAiNode& pNode = *NodeIt;
 				pContainer->AddNode(pNode.msName,pNode.mvPos,NULL);
 			}
 
@@ -1073,11 +1044,8 @@ namespace hpl {
 
 	void cWorld3D::UpdateEntities(float afTimeStep)
 	{
-		tMeshEntityListIt MeshIt = mlstMeshEntities.begin();
-		for(;MeshIt != mlstMeshEntities.end();MeshIt++)
+		for(auto pEntity : mlstMeshEntities)
 		{
-			cMeshEntity *pEntity = *MeshIt;
-
 			if(pEntity->IsActive()){
 				//bool bTime = cString::GetLastStringPos(pEntity->GetName(), "infected")>=0;
 				//if(bTime) START_TIMING_EX(pEntity->GetName().c_str(),entity);
@@ -1102,15 +1070,9 @@ namespace hpl {
 
 	void cWorld3D::UpdateLights(float afTimeStep)
 	{
-		tLight3DListIt it = mlstLights.begin();
-
-		while(it != mlstLights.end())
+		for(auto pLight : mlstLights)
 		{
-			iLight3D *pLight = *it;
-
 			if(pLight->IsActive()) pLight->UpdateLogic(afTimeStep);
-
-			++it;
 		}
 	}
 
@@ -1230,25 +1192,21 @@ namespace hpl {
 		cSaveData_cWorld3D *pData = hplNew( cSaveData_cWorld3D, () );
 
 		//Start pos
-		tStartPosEntityListIt StartIt = mlstStartPosEntities.begin();
-		for(; StartIt != mlstStartPosEntities.end(); ++StartIt)
+		for(auto pStartPos : mlstStartPosEntities)
 		{
-			pData->mlstStartpos.Add(*(*StartIt));
+			pData->mlstStartpos.Add(*pStartPos);
 		}
 
 		//Area entities
-		tAreaEntityMapIt AreaIt = m_mapAreaEntities.begin();
-		for(; AreaIt != m_mapAreaEntities.end(); ++AreaIt)
+		for(auto& AreaIt : m_mapAreaEntities)
 		{
-			pData->mlstAreaEntities.Add(*(AreaIt->second));
+			pData->mlstAreaEntities.Add(*AreaIt.second);
 		}
 
 		//Local scripts
-		tScriptVarMap* pLocalVarMap = mpScene->GetLocalVarMap();
-		tScriptVarMapIt VarIt = pLocalVarMap->begin();
-		for(; VarIt != pLocalVarMap->end(); ++VarIt)
+		for(auto& VarIt : *mpScene->GetLocalVarMap())
 		{
-			pData->mlstScriptVars.Add(VarIt->second);
+			pData->mlstScriptVars.Add(VarIt.second);
 		}
 
 		return pData;

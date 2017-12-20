@@ -368,11 +368,10 @@ namespace hpl {
 	template <class CONT>
 	void* STLFindByName(CONT &aCont,const tString& asName )
 	{
-		typename CONT::iterator it = aCont.begin();
-		for(;it != aCont.end();it++)
+		for(auto& element : aCont)
 		{
-			if((*it)->GetName() == asName){
-				return *it;
+			if(element->GetName() == asName){
+				return element;
 			}
 		}
 		return NULL;
@@ -382,10 +381,9 @@ namespace hpl {
 
 	template <class T>
 	void STLDeleteAll(T &aCont){
-		typename T::iterator it = aCont.begin();
-		for(;it != aCont.end();it++)
+		for(auto element : aCont)
 		{
-			hplDelete(*it);
+			hplDelete(element);
 		}
 		aCont.clear();
 	}
@@ -394,10 +392,9 @@ namespace hpl {
 
 	template <class T>
 	void STLMapDeleteAll(T &aCont){
-		typename T::iterator it = aCont.begin();
-		for(;it != aCont.end();it++)
+		for(auto& it : aCont)
 		{
-			hplDelete(it->second);
+			hplDelete(it.second);
 		}
 		aCont.clear();
 	}

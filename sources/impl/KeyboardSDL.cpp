@@ -54,10 +54,9 @@ namespace hpl {
 	void cKeyboardSDL::Update()
 	{
 		mlstKeysPressed.clear();
-		std::list<SDL_Event>::iterator it = mpLowLevelInputSDL->mlstEvents.begin();
-		for(; it != mpLowLevelInputSDL->mlstEvents.end(); ++it)
+		for(auto& event : mpLowLevelInputSDL->mlstEvents)
 		{
-			SDL_Event *pEvent = &(*it);
+			SDL_Event *pEvent = &event;
 
 			if(pEvent->type != SDL_KEYDOWN && pEvent->type != SDL_KEYUP)
 			{

@@ -159,10 +159,9 @@ namespace hpl {
 					pPortalContainer->AddSector(sRoomId);
 
 					//Add all childs of this node to the room.
-					tColladaNodeListIt ChildIt = pNode->mlstChildren.begin();
-					for(; ChildIt != pNode->mlstChildren.end();ChildIt++)
+					for(auto pChild : pNode->mlstChildren)
 					{
-						AddSectorChildren(*ChildIt,sRoomId, pWorld,vColladaGeometries,vColladaLights,
+						AddSectorChildren(pChild,sRoomId, pWorld,vColladaGeometries,vColladaLights,
 											vColladaMaterials,vColladaTextures,vColladaImages);
 					}
 				}
@@ -172,10 +171,9 @@ namespace hpl {
 		//////////////////////////////////////////////////////////////
 		//Iterate the nodes and add remaining objects to the scene.
 		//Log("ADD OBJECTS:\n");
-		it = ColladaScene.mRoot.mlstChildren.begin();
-		for(; it != ColladaScene.mRoot.mlstChildren.end(); it++)
+		for(auto pChild : ColladaScene.mRoot.mlstChildren)
 		{
-			AddSceneObjects(*it, pWorld, vColladaGeometries,vColladaLights,
+			AddSceneObjects(pChild, pWorld, vColladaGeometries,vColladaLights,
 				vColladaMaterials,vColladaTextures,vColladaImages,&ColladaScene);
 		}
 
@@ -303,11 +301,8 @@ namespace hpl {
 		{
 			pSkeleton = hplNew( cSkeleton, () );
 
-			tColladaNodeListIt it = ColladaScene.mRoot.mlstChildren.begin();
-			for(; it != ColladaScene.mRoot.mlstChildren.end(); it++)
+			for(auto pNode : ColladaScene.mRoot.mlstChildren)
 			{
-				cColladaNode *pNode = *it;
-
 				CreateSkeletonBone(pNode, pSkeleton->GetRootBone());
 			}
 
@@ -792,11 +787,8 @@ namespace hpl {
 				for(size_t j=0; j<pCtrl->mvPairs.size(); j++)
 				{
 					//Get all vertices for this vertex pos
-					tColladaExtraVtxListIt ExtraIt = vExtraVtxVec[j].begin();
-					for(; ExtraIt != vExtraVtxVec[j].end(); ++ExtraIt)
+					for(auto& Extra : vExtraVtxVec[j])
 					{
-						cColladaExtraVtx &Extra = *ExtraIt;
-
 						//Iterate all the influences for this vertex.
 						tColladaJointPairListIt PairIt = pCtrl->mvPairs[j].begin();
 						for(; PairIt != pCtrl->mvPairs[j].end(); ++PairIt)
@@ -2473,11 +2465,10 @@ namespace hpl {
 
 		//////////////////////////////////////////////////
 		//Iterate children.
-		tColladaNodeListIt ChildIt = apNode->mlstChildren.begin();
-		for(; ChildIt != apNode->mlstChildren.end();ChildIt++)
+		for(auto pChild : apNode->mlstChildren)
 		{
-			AddSectorChildren(*ChildIt, asSector, apWorld,avColladaGeometries,avColladaLights,
-				avColladaMaterials,avColladaTextures,avColladaImages);
+			AddSectorChildren(pChild, asSector, apWorld,avColladaGeometries,avColladaLights,
+					avColladaMaterials,avColladaTextures,avColladaImages);
 		}
 	}
 

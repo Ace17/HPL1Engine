@@ -65,19 +65,16 @@ namespace hpl {
 
 	cSoundHandler::~cSoundHandler()
 	{
-		tSoundEntryListIt it;
-		it = mlstGuiSounds.begin();
-		while(it != mlstGuiSounds.end()){
-			it->mpSound->Stop();
-			hplDelete(it->mpSound);
-			it = mlstGuiSounds.erase(it);
+		for(auto& sound : mlstGuiSounds)
+		{
+			sound.mpSound->Stop();
+			hplDelete(sound.mpSound);
 		}
 
-		it = mlstWorldSounds.begin();
-		while(it != mlstWorldSounds.end())	{
-			it->mpSound->Stop();
-			hplDelete(it->mpSound);
-			it = mlstWorldSounds.erase(it);
+		for(auto& sound : mlstWorldSounds)
+		{
+			sound.mpSound->Stop();
+			hplDelete(sound.mpSound);
 		}
 	}
 
@@ -368,25 +365,20 @@ namespace hpl {
 
 	void cSoundHandler::StopAll(tFlag mTypes)
 	{
-		tSoundEntryListIt it;
 		if(mTypes & eSoundDest_Gui){
-			it = mlstGuiSounds.begin();
-			while(it != mlstGuiSounds.end()){
-				it->mpSound->SetPaused(false);
-				it->mpSound->Stop();
-				it++;
+			for(auto& it : mlstGuiSounds){
+				it.mpSound->SetPaused(false);
+				it.mpSound->Stop();
 			}
 		}
 
 		if(mTypes & eSoundDest_World)
 		{
-			it = mlstWorldSounds.begin();
-			while(it != mlstWorldSounds.end())
+			for(auto& it : mlstWorldSounds)
 			{
-				//Log("Stopping: %s\n",it->mpSound->GetData()->GetName().c_str());
-				it->mpSound->SetPaused(false);
-				it->mpSound->Stop();
-				it++;
+				//Log("Stopping: %s\n",it.mpSound->GetData()->GetName().c_str());
+				it.mpSound->SetPaused(false);
+				it.mpSound->Stop();
 			}
 		}
 	}
@@ -394,20 +386,15 @@ namespace hpl {
 
 	void cSoundHandler::PauseAll(tFlag mTypes)
 	{
-		tSoundEntryListIt it;
 		if(mTypes & eSoundDest_Gui){
-			it = mlstGuiSounds.begin();
-			while(it != mlstGuiSounds.end()){
-				it->mpSound->SetPaused(true);
-				it++;
+			for(auto& it : mlstGuiSounds){
+				it.mpSound->SetPaused(true);
 			}
 		}
 
 		if(mTypes & eSoundDest_World){
-			it = mlstWorldSounds.begin();
-			while(it != mlstWorldSounds.end())	{
-				it->mpSound->SetPaused(true);
-				it++;
+			for(auto& it : mlstWorldSounds){
+				it.mpSound->SetPaused(true);
 			}
 		}
 	}
@@ -415,20 +402,15 @@ namespace hpl {
 
 	void cSoundHandler::ResumeAll(tFlag mTypes)
 	{
-		tSoundEntryListIt it;
 		if(mTypes & eSoundDest_Gui){
-			it = mlstGuiSounds.begin();
-			while(it != mlstGuiSounds.end()){
-				it->mpSound->SetPaused(false);
-				it++;
+			for(auto& it : mlstGuiSounds){
+				it.mpSound->SetPaused(false);
 			}
 		}
 
 		if(mTypes & eSoundDest_World){
-			it = mlstWorldSounds.begin();
-			while(it != mlstWorldSounds.end())	{
-				it->mpSound->SetPaused(false);
-				it++;
+			for(auto& it : mlstWorldSounds){
+				it.mpSound->SetPaused(false);
 			}
 		}
 	}
@@ -447,19 +429,14 @@ namespace hpl {
 
 	bool cSoundHandler::IsValid(iSoundChannel* apChannel)
 	{
-		tSoundEntryListIt it;
-		it = mlstWorldSounds.begin();
-		while(it != mlstWorldSounds.end())
+		for(auto& it : mlstWorldSounds)
 		{
-			if(it->mpSound == apChannel)return true;
-			it++;
+			if(it.mpSound == apChannel)return true;
 		}
 
-		it = mlstGuiSounds.begin();
-		while(it != mlstGuiSounds.end())
+		for(auto& it : mlstGuiSounds)
 		{
-			if(it->mpSound == apChannel)return true;
-			it++;
+			if(it.mpSound == apChannel)return true;
 		}
 
 		return false;
@@ -471,19 +448,14 @@ namespace hpl {
 	{
 		if(apChannel==NULL) return false;
 
-		tSoundEntryListIt it;
-		it = mlstWorldSounds.begin();
-		while(it != mlstWorldSounds.end())
+		for(auto& it : mlstWorldSounds)
 		{
-			if(it->mpSound == apChannel && it->mpSound->GetId() == alId)return true;
-			it++;
+			if(it.mpSound == apChannel && it.mpSound->GetId() == alId)return true;
 		}
 
-		it = mlstGuiSounds.begin();
-		while(it != mlstGuiSounds.end())
+		for(auto& it : mlstGuiSounds)
 		{
-			if(it->mpSound == apChannel && it->mpSound->GetId() == alId)return true;
-			it++;
+			if(it.mpSound == apChannel && it.mpSound->GetId() == alId)return true;
 		}
 
 		return false;
@@ -587,24 +559,20 @@ namespace hpl {
 
 	cSoundEntry* cSoundHandler::GetEntryFromSound(iSoundChannel *apSound)
 	{
-		tSoundEntryListIt it = mlstGuiSounds.begin();
-		while(it != mlstGuiSounds.end())
+		for(auto& it : mlstGuiSounds)
 		{
-			if(it->mpSound == apSound){
+			if(it.mpSound == apSound){
 				//Log("returning from GUI %d\n",&(*it));
-				return &(*it);
+				return &it;
 			}
-			++it;
 		}
 
-		it = mlstWorldSounds.begin();
-		while(it != mlstWorldSounds.end())
+		for(auto& it : mlstWorldSounds)
 		{
-			if(it->mpSound == apSound){
+			if(it.mpSound == apSound){
 				//Log("returning from World %d\n",&(*it));
-				return &(*it);
+				return &it;
 			}
-			++it;
 		}
 
 		return NULL;

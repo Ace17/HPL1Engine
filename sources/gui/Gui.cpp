@@ -109,19 +109,15 @@ namespace hpl {
 	{
 		////////////////////////////////////
 		// Update Sets
-		tGuiSetMapIt it = m_mapSets.begin();
-		for(; it != m_mapSets.end(); ++it)
+		for(auto pSet : m_mapSets)
 		{
-			cGuiSet *pSet = it->second;
-			pSet->Update(afTimeStep);
+			pSet.second->Update(afTimeStep);
 		}
 
 		/////////////////////////////
 		// Update gfx elements
-		tGuiGfxElementListIt gfxIt = mlstGfxElements.begin();
-		for(; gfxIt != mlstGfxElements.end(); ++gfxIt)
+		for(auto pGfx : mlstGfxElements)
 		{
-			cGuiGfxElement *pGfx = *gfxIt;
 			pGfx->Update(afTimeStep);
 		}
 	}
@@ -140,10 +136,9 @@ namespace hpl {
 
 		////////////////////////////////////
 		// Draw all sets
-		tGuiSetMapIt setIt = m_mapSets.begin();
-		for(; setIt != m_mapSets.end(); ++setIt)
+		for(auto& setIt : m_mapSets)
 		{
-			cGuiSet *pSet = setIt->second;
+			cGuiSet *pSet = setIt.second;
 			pSet->DrawAll(fTimeStep);
 		}
 
@@ -152,10 +147,9 @@ namespace hpl {
 
 		////////////////////////////////////
 		// Render sets that are project to screen
-		setIt = m_mapSets.begin();
-		for(; setIt != m_mapSets.end(); ++setIt)
+		for(auto& setIt : m_mapSets)
 		{
-			cGuiSet *pSet = setIt->second;
+			cGuiSet *pSet = setIt.second;
 			if(pSet->Is3D()) pSet->Render();
 		}
 	}
@@ -167,20 +161,18 @@ namespace hpl {
 		typedef std::multimap<int, cGuiSet*> tPrioMap;
 		tPrioMap mapSortedSets;
 
-		tGuiSetMapIt it = m_mapSets.begin();
-		for(; it != m_mapSets.end(); ++it)
+		for(auto& it : m_mapSets)
 		{
-			cGuiSet *pSet = it->second;
+			cGuiSet *pSet = it.second;
 
 			mapSortedSets.insert(tPrioMap::value_type(pSet->GetDrawPriority(),pSet));
 		}
 
 		////////////////////////////////////
 		// Render sets that are project to screen
-		tPrioMap::iterator SortIt = mapSortedSets.begin();
-		for(; SortIt != mapSortedSets.end(); ++SortIt)
+		for(auto& SortIt : mapSortedSets)
 		{
-			cGuiSet *pSet = SortIt->second;
+			cGuiSet *pSet = SortIt.second;
 			if(pSet->Is3D()==false) pSet->Render();
 		}
 	}

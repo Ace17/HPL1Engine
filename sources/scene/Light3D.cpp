@@ -386,22 +386,14 @@ namespace hpl {
 			apRenderSettings->mpVertexProgram = apRenderSettings->mpVtxExtrudeProgram;
 
 			//Render shadows
-			tCasterCacheSetIt it = m_setDynamicCasters.begin();
-
 			if(apRenderSettings->mShowShadows == eRendererShowShadows_All)
 			{
-				it = m_setDynamicCasters.begin();
-				for(; it!= m_setDynamicCasters.end(); ++it)
-				{
-					RenderShadow(*it,apRenderSettings,apLowLevelGraphics);
-				}
+        for(auto& caster : m_setDynamicCasters)
+					RenderShadow(caster, apRenderSettings, apLowLevelGraphics);
 			}
 
-			it = m_setStaticCasters.begin();
-			for(; it!= m_setStaticCasters.end(); ++it)
-			{
-				RenderShadow(*it,apRenderSettings,apLowLevelGraphics);
-			}
+      for(auto& caster : m_setStaticCasters)
+				RenderShadow(caster, apRenderSettings, apLowLevelGraphics);
 
 			//Make rendering ready for the objects.
 			//apLowLevelGraphics->SetStencilTwoSideActive(false);

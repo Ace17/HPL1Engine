@@ -50,10 +50,10 @@ namespace hpl {
 	{
 		Log(" Deleting tileset.\n");
 
-		for(tTileDataVecIt it= mvData.begin(); it!=mvData.end();it++)
+		for(auto pData : mvData)
 		{
-			(*it)->Destroy();
-			hplDelete(*it);
+			pData->Destroy();
+			hplDelete(pData);
 		}
 	}
 

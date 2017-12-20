@@ -72,16 +72,16 @@ namespace hpl
 	{
 		mpLowLevelInput->BeginInputUpdate();
 
-		for(tInputDeviceListIt it = mlstInputDevices.begin(); it!= mlstInputDevices.end();++it)
+		for(auto pDevice : mlstInputDevices)
 		{
-			(*it)->Update();
+			pDevice->Update();
 		}
 
 		mpLowLevelInput->EndInputUpdate();
 
-		for(tActionMapIt it = m_mapActions.begin(); it!= m_mapActions.end();++it)
+		for(auto& it : m_mapActions)
 		{
-			it->second->Update(afTimeStep);
+			it.second->Update(afTimeStep);
 		}
 	}
 

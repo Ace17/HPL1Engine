@@ -46,16 +46,16 @@ namespace hpl {
 
 	void cUpdater::OnDraw()
 	{
-		for(tUpdateableListIt it = mlstGlobalUpdateableList.begin();it!=mlstGlobalUpdateableList.end();++it)
+		for(auto pUpdate : mlstGlobalUpdateableList)
 		{
-			(*it)->OnDraw();
+			pUpdate->OnDraw();
 		}
 
 		if(mpCurrentUpdates)
 		{
-			for(tUpdateableListIt it = mpCurrentUpdates->begin();it!=mpCurrentUpdates->end();++it)
+			for(auto pUpdate : *mpCurrentUpdates)
 			{
-				(*it)->OnDraw();
+				pUpdate->OnDraw();
 			}
 		}
 	}
@@ -63,32 +63,32 @@ namespace hpl {
 
 	void cUpdater::OnPostSceneDraw()
 	{
-		for(tUpdateableListIt it = mlstGlobalUpdateableList.begin();it!=mlstGlobalUpdateableList.end();++it)
+		for(auto pUpdate : mlstGlobalUpdateableList)
 		{
-			(*it)->OnPostSceneDraw();
+			pUpdate->OnPostSceneDraw();
 		}
 
 		if(mpCurrentUpdates)
 		{
-			for(tUpdateableListIt it = mpCurrentUpdates->begin();it!=mpCurrentUpdates->end();++it)
+			for(auto pUpdate : *mpCurrentUpdates)
 			{
-				(*it)->OnPostSceneDraw();
+				pUpdate->OnPostSceneDraw();
 			}
 		}
 	}
 
 	void cUpdater::OnPostGUIDraw()
 	{
-		for(tUpdateableListIt it = mlstGlobalUpdateableList.begin();it!=mlstGlobalUpdateableList.end();++it)
+		for(auto pUpdate : mlstGlobalUpdateableList)
 		{
-			(*it)->OnPostGUIDraw();
+			pUpdate->OnPostGUIDraw();
 		}
 
 		if(mpCurrentUpdates)
 		{
-			for(tUpdateableListIt it = mpCurrentUpdates->begin();it!=mpCurrentUpdates->end();++it)
+			for(auto pUpdate : *mpCurrentUpdates)
 			{
-				(*it)->OnPostGUIDraw();
+				pUpdate->OnPostGUIDraw();
 			}
 		}
 	}
@@ -97,16 +97,16 @@ namespace hpl {
 
 	void cUpdater::OnPostBufferSwap()
 	{
-		for(tUpdateableListIt it = mlstGlobalUpdateableList.begin();it!=mlstGlobalUpdateableList.end();++it)
+		for(auto pUpdate : mlstGlobalUpdateableList)
 		{
-			(*it)->OnPostBufferSwap();
+			pUpdate->OnPostBufferSwap();
 		}
 
 		if(mpCurrentUpdates)
 		{
-			for(tUpdateableListIt it = mpCurrentUpdates->begin();it!=mpCurrentUpdates->end();++it)
+			for(auto pUpdate : *mpCurrentUpdates)
 			{
-				(*it)->OnPostBufferSwap();
+				pUpdate->OnPostBufferSwap();
 			}
 		}
 	}
@@ -115,22 +115,17 @@ namespace hpl {
 
 	void cUpdater::OnStart()
 	{
-		for(tUpdateableListIt it = mlstGlobalUpdateableList.begin();it!=mlstGlobalUpdateableList.end();++it)
+		for(auto pUpdate : mlstGlobalUpdateableList)
 		{
-			(*it)->OnStart();
+			pUpdate->OnStart();
 		}
 
-		tUpdateContainerMapIt ContIt = m_mapUpdateContainer.begin();
-		while(ContIt != m_mapUpdateContainer.end())
+		for(auto& ContIt : m_mapUpdateContainer)
 		{
-			tUpdateableListIt UpIt = ContIt->second.begin();
-			while(UpIt != ContIt->second.end())
+			for(auto pUpdate : ContIt.second)
 			{
-				(*UpIt)->OnStart();
-				UpIt++;
+				pUpdate->OnStart();
 			}
-
-			ContIt++;
 		}
 	}
 
@@ -138,27 +133,17 @@ namespace hpl {
 
 	void cUpdater::Reset()
 	{
-		for(tUpdateableListIt it = mlstGlobalUpdateableList.begin();it!=mlstGlobalUpdateableList.end();++it)
+		for(auto pUpdate : mlstGlobalUpdateableList)
 		{
-			(*it)->Reset();
+			pUpdate->Reset();
 		}
 
-		tUpdateContainerMapIt ContIt = m_mapUpdateContainer.begin();
-		while(ContIt != m_mapUpdateContainer.end())
+		for(auto& ContIt : m_mapUpdateContainer)
 		{
-
-			tUpdateableList *pUpdates = &ContIt->second;
-			tUpdateableListIt UpIt = pUpdates->begin();
-			while(UpIt != pUpdates->end())
+			for(auto pUpdate : ContIt.second)
 			{
-				iUpdateable *pUpdate = *UpIt;
-
 				pUpdate->Reset();
-
-				++UpIt;
 			}
-
-			++ContIt;
 		}
 	}
 
@@ -166,24 +151,19 @@ namespace hpl {
 
 	void cUpdater::OnExit()
 	{
-		for(tUpdateableListIt it = mlstGlobalUpdateableList.begin();it!=mlstGlobalUpdateableList.end();++it)
+		for(auto pUpdate : mlstGlobalUpdateableList)
 		{
 			//Log(" Exiting %s\n",(*it)->GetName().c_str());
-			(*it)->OnExit();
+			pUpdate->OnExit();
 		}
 
-		tUpdateContainerMapIt ContIt = m_mapUpdateContainer.begin();
-		while(ContIt != m_mapUpdateContainer.end())
+		for(auto& ContIt : m_mapUpdateContainer)
 		{
-			tUpdateableListIt UpIt = ContIt->second.begin();
-			while(UpIt != ContIt->second.end())
+			for(auto pUpdate : ContIt.second)
 			{
 				//Log(" Exiting %s\n",(*UpIt)->GetName().c_str());
-				(*UpIt)->OnExit();
-				UpIt++;
+				pUpdate->OnExit();
 			}
-
-			ContIt++;
 		}
 	}
 
@@ -191,20 +171,19 @@ namespace hpl {
 
 	void cUpdater::Update(float afTimeStep)
 	{
-		for(tUpdateableListIt it = mlstGlobalUpdateableList.begin();it!=mlstGlobalUpdateableList.end();++it)
+		for(auto pUpdate : mlstGlobalUpdateableList)
 		{
-			START_TIMING_EX((*it)->GetName().c_str(),game)
-			(*it)->Update(afTimeStep);
+			START_TIMING_EX(pUpdate->GetName().c_str(),game)
+			pUpdate->Update(afTimeStep);
 			STOP_TIMING(game)
 		}
 
 		if(mpCurrentUpdates)
 		{
-			tUpdateableList *pList = mpCurrentUpdates;
-			for(tUpdateableListIt it = pList->begin();it!=pList->end();++it)
+			for(auto pUpdate : *mpCurrentUpdates)
 			{
-				START_TIMING_EX((*it)->GetName().c_str(),game)
-				(*it)->Update(afTimeStep);
+				START_TIMING_EX(pUpdate->GetName().c_str(),game)
+				pUpdate->Update(afTimeStep);
 				STOP_TIMING(game)
 			}
 		}

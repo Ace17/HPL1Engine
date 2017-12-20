@@ -54,10 +54,8 @@ namespace hpl {
 	iSoundEnvironment* iLowLevelSound::GetSoundEnvironmentFromFileName (const tString& asName)
 	{
 		tString sLowName = cString::ToLowerCase(asName);
-		for (tSoundEnvListIt SEIt = mlstSoundEnv.begin(); SEIt != mlstSoundEnv.end(); ++SEIt)
+		for (auto pSoundEnv : mlstSoundEnv)
 		{
-			iSoundEnvironment* pSoundEnv = *SEIt;
-
 			if(sLowName == pSoundEnv->GetFileName()) return pSoundEnv;
 		}
 		return NULL;

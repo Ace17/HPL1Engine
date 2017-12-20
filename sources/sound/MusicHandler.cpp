@@ -54,15 +54,10 @@ namespace hpl {
 			hplDelete(mpMainSong);
 		}
 
-		tMusicEntryListIt it = mlstFadingSongs.begin();
-		while(it != mlstFadingSongs.end())
+		for(auto pSong : mlstFadingSongs)
 		{
-			cMusicEntry* pSong = *it;
 			hplDelete(pSong->mpStream);
 			hplDelete(pSong);
-
-			it = mlstFadingSongs.erase(it);
-			//it++;
 		}
 	}
 
@@ -168,10 +163,8 @@ namespace hpl {
 	{
 		if(mpMainSong != NULL)mpMainSong->mpStream->SetPaused(true);
 
-		tMusicEntryListIt it = mlstFadingSongs.begin();
-		while(it != mlstFadingSongs.end()){
-			(*it)->mpStream->SetPaused(true);
-			it++;
+		for(auto pSong : mlstFadingSongs) {
+			pSong->mpStream->SetPaused(true);
 		}
 
 		mbIsPaused = true;
@@ -183,10 +176,8 @@ namespace hpl {
 	{
 		if(mpMainSong != NULL)mpMainSong->mpStream->SetPaused(false);
 
-		tMusicEntryListIt it = mlstFadingSongs.begin();
-		while(it != mlstFadingSongs.end()){
-			(*it)->mpStream->SetPaused(false);
-			it++;
+		for(auto pSong : mlstFadingSongs) {
+			pSong->mpStream->SetPaused(false);
 		}
 
 		mbIsPaused = false;

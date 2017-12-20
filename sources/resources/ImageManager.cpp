@@ -210,11 +210,11 @@ namespace hpl {
 	void cImageManager::DeleteAllBitmapFrames()
 	{
 		FlushAll();
-		for(tFrameBitmapListIt it=mlstBitmapFrames.begin();it!=mlstBitmapFrames.end();)
-		{
-			hplDelete(*it);
-			it = mlstBitmapFrames.erase(it);
-		}
+
+		for(auto pFrame : mlstBitmapFrames)
+			hplDelete(pFrame);
+
+		mlstBitmapFrames.clear();
 	}
 
 	//-----------------------------------------------------------------------
@@ -259,14 +259,12 @@ namespace hpl {
 
 	void cImageManager::SetFrameLocked(int alHandle, bool abLocked)
 	{
-		tFrameBitmapListIt it = mlstBitmapFrames.begin();
-		while(it != mlstBitmapFrames.end())
+		for(auto pFrame : mlstBitmapFrames)
 		{
-			if((*it)->GetHandle() == alHandle){
-				(*it)->SetLocked(abLocked);
+			if(pFrame->GetHandle() == alHandle){
+				pFrame->SetLocked(abLocked);
 				break;
 			}
-			it++;
 		}
 	}
 
@@ -284,9 +282,9 @@ namespace hpl {
 
 		if(cString::GetFileExt(asName)=="")
 		{
-			for(tStringListIt it = mlstFileFormats.begin();it!=mlstFileFormats.end();++it)
+			for(auto& ext : mlstFileFormats)
 			{
-				tString sNewName = cString::SetFileExt(asName,*it);
+				tString sNewName = cString::SetFileExt(asName, ext);
 				pImage = static_cast<cResourceImage*> (FindLoadedResource(sNewName, asFilePath));
 
 				if((pImage==NULL && asFilePath!="") || pImage!=NULL)break;
@@ -314,10 +312,10 @@ namespace hpl {
 		if(alFrameHandle<0)
 		{
 			//Search the frames til one is find that fits the bitmap
-			for(tFrameBitmapListIt it=mlstBitmapFrames.begin();it!=mlstBitmapFrames.end();it++)
+			for(auto pFrame : mlstBitmapFrames)
 			{
-				if(!(*it)->IsFull() && !(*it)->IsLocked()){
-					pImage = (*it)->AddBitmap(apBmp);
+				if(!pFrame->IsFull() && !pFrame->IsLocked()){
+					pImage = pFrame->AddBitmap(apBmp);
 					if(pImage!=NULL)
 					{
 						bFound = true;
@@ -347,15 +345,13 @@ namespace hpl {
 		}
 		else
 		{
-			tFrameBitmapListIt it = mlstBitmapFrames.begin();
-			while(it != mlstBitmapFrames.end())
+			for(auto pFrame : mlstBitmapFrames)
 			{
-				if((*it)->GetHandle() == alFrameHandle)
+				if(pFrame->GetHandle() == alFrameHandle)
 				{
-					pImage = (*it)->AddBitmap(apBmp);
+					pImage = pFrame->AddBitmap(apBmp);
 					break;
 				}
-				it++;
 			}
 			if(pImage==NULL)
 				Error("Image didn't fit frame %d!\n", alFrameHandle);

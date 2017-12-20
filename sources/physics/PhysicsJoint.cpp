@@ -106,10 +106,9 @@ namespace hpl {
 		if(mbAutoDeleteCallback && mpCallback) hplDelete(mpCallback);
 
 		//Destroy all controllers.
-		tPhysicsControllerMapIt it = m_mapControllers.begin();
-		for(; it != m_mapControllers.end(); ++it)
+		for(auto& it : m_mapControllers)
 		{
-			mpWorld->DestroyController(it->second);
+			mpWorld->DestroyController(it.second);
 		}
 
 		if(mpChildBody) mpChildBody->RemoveJoint(this);
@@ -167,10 +166,9 @@ namespace hpl {
 		iPhysicsController *pNewCtrl = GetController(asName);
 		if(pNewCtrl==NULL) return false;
 
-		tPhysicsControllerMapIt it = m_mapControllers.begin();
-		for(; it != m_mapControllers.end(); ++it)
+		for(auto& it : m_mapControllers)
 		{
-			iPhysicsController *pCtrl = it->second;
+			iPhysicsController *pCtrl = it.second;
 
 			if(pCtrl == pNewCtrl)
 			{
@@ -189,10 +187,9 @@ namespace hpl {
 
 	void iPhysicsJoint::SetAllControllersPaused(bool abX)
 	{
-		tPhysicsControllerMapIt it = m_mapControllers.begin();
-		for(; it != m_mapControllers.end(); ++it)
+		for(auto& it : m_mapControllers)
 		{
-			iPhysicsController *pCtrl = it->second;
+			iPhysicsController *pCtrl = it.second;
 
 			pCtrl->SetPaused(abX);
 		}
@@ -225,10 +222,9 @@ namespace hpl {
 		if(mbHasCollided==false)
 		{
 			//Log("OnMax!\n");
-			tPhysicsControllerMapIt it = m_mapControllers.begin();
-			for(; it != m_mapControllers.end(); ++it)
+			for(auto& it : m_mapControllers)
 			{
-				iPhysicsController *pCtrl = it->second;
+				iPhysicsController *pCtrl = it.second;
 
 				//Log("Ctrl %s: %d\n",pCtrl->GetName().c_str(),(int)pCtrl->GetEndType());
 
@@ -261,10 +257,9 @@ namespace hpl {
 		{
 			//Log("OnMin!\n");
 
-			tPhysicsControllerMapIt it = m_mapControllers.begin();
-			for(; it != m_mapControllers.end(); ++it)
+			for(auto& it : m_mapControllers)
 			{
-				iPhysicsController *pCtrl = it->second;
+				iPhysicsController *pCtrl = it.second;
 
 				if(pCtrl->IsActive() && pCtrl->GetEndType() == ePhysicsControllerEnd_OnMin)
 				{
@@ -680,10 +675,9 @@ namespace hpl {
 		//////////////////////////
 		//Controllers
 		pData->mlstControllers.Clear();
-		tPhysicsControllerMapIt it = m_mapControllers.begin();
-		for(; it != m_mapControllers.end(); ++it)
+		for(auto& it : m_mapControllers)
 		{
-			iPhysicsController *pController = it->second;
+			iPhysicsController *pController = it.second;
 			cSaveData_iPhysicsController saveController;
 			pController->SaveToSaveData(&saveController);
 
