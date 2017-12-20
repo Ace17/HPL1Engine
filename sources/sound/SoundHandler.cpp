@@ -932,7 +932,7 @@ namespace hpl {
 			int lLastNum = -1;
 
 			//Check what the last sound played was.
-			tPlayedSoundNumMapIt SoundIt = m_mapPlayedSound.find(sBaseName);
+			auto SoundIt = m_mapPlayedSound.find(sBaseName);
 			if(SoundIt== m_mapPlayedSound.end())
 			{
 				m_mapPlayedSound.insert(tPlayedSoundNumMap::value_type(sBaseName,0));

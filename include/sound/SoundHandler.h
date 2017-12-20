@@ -107,7 +107,6 @@ namespace hpl {
 	//----------------------------------------
 
 	typedef std::map<tString, int> tPlayedSoundNumMap;
-	typedef tPlayedSoundNumMap::iterator tPlayedSoundNumMapIt;
 
 	//----------------------------------------
 
