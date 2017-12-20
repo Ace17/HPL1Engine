@@ -19,7 +19,6 @@
 #ifndef HPL_SYSTEM_TYPES_H
 #define HPL_SYSTEM_TYPES_H
 
-#include <stdio.h>
 #include <string>
 #include <list>
 #include <set>

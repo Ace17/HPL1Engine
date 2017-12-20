@@ -19,8 +19,6 @@
 #ifndef HPL_SAVE_GAME_H
 #define HPL_SAVE_GAME_H
 
-#include <map>
-
 #include "system/SystemTypes.h"
 #include "system/SerializeClass.h"
 
