@@ -342,15 +342,10 @@ namespace hpl {
 	bool cSoundHandler::Stop(const tString& asName)
 	{
 		cSoundEntry *pEntry = GetEntry(asName);
-		if(pEntry)
-		{
-			pEntry->mpSound->Stop();
-		}
-		else
-		{
+		if(!pEntry)
 			return false;
-		}
 
+		pEntry->mpSound->Stop();
 		return true;
 	}
 
