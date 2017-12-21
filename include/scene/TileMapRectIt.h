@@ -37,7 +37,6 @@ namespace hpl {
 		 * \return
 		 */
 		cTileMapRectIt(cVector2l avPos, cVector2l avSize, cTileMap* apTileMap, int alLayer);
-		~cTileMapRectIt();
 
 		bool HasNext();
 		cTile* Next();

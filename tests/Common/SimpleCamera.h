@@ -13,7 +13,6 @@ class cSimpleCamera : public iUpdateable
 {
 public:
 	cSimpleCamera(cGame *apGame, float afSpeed,cVector3f avStartPos,bool abShowFPS);
-	~cSimpleCamera();
 
 	void Update(float afFrameTime);
 

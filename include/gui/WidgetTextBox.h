@@ -29,7 +29,6 @@ namespace hpl {
 	{
 	public:
 		cWidgetTextBox(cGuiSet *apSet, cGuiSkin *apSkin);
-		virtual ~cWidgetTextBox();
 
 		void SetMaxTextLength(int alLength);
 		int GetMaxTextLength(){return mlMaxCharacters;}

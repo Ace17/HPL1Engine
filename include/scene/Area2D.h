@@ -31,7 +31,6 @@ namespace hpl {
 	{
 	public:
 		cArea2D(const tString& asName,const tString& asTypeName,cCollider2D* apCollider);
-		~cArea2D();
 
 		tString GetEntityType(){ return "Area";}
 		const tString& GetType(){ return msType;}

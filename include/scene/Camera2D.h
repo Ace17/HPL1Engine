@@ -30,7 +30,6 @@ namespace hpl {
 	{
 	public:
 		cCamera2D(unsigned int alW,unsigned int alH);
-		~cCamera2D();
 
 		const cVector3f& GetPosition()const{return mvPosition;}
 		cVector3f GetEyePosition();

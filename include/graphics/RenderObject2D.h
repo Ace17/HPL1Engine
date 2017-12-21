@@ -41,8 +41,6 @@ namespace hpl {
 		cRenderObject2D(iMaterial* apMaterial, iRenderObject2DRenderer* apRenderer,
 			ePrimitiveType aType,float afZ);
 
-		~cRenderObject2D();
-
 		iMaterial* GetMaterial()const{ return mpMaterial;}
 		tVertexVec* GetVertexVec()const{ return mpVtxVec;}
 		tUIntVec* GetIndexVec()const{ return mpIdxVec;}

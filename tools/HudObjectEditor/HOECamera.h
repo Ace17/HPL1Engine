@@ -24,7 +24,6 @@ class cHOECamera : public iUpdateable
 {
 public:
 	cHOECamera(cGame *apGame, float afSpeed,cVector3f avStartPos,bool abShowFPS);
-	~cHOECamera();
 
 	void Update(float afFrameTime);
 

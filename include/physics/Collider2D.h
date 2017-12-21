@@ -42,7 +42,6 @@ namespace hpl {
 	{
 	public:
 		cCollider2D();
-		~cCollider2D();
 
 		void SetWorld(cWorld2D* apWorld){ mpWorld = apWorld;}
 

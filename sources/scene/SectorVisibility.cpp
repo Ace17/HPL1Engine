@@ -31,26 +31,6 @@ namespace hpl {
 
 	//-----------------------------------------------------------------------
 
-	cPortalVisibility::cPortalVisibility()
-	{
-
-	}
-
-	//-----------------------------------------------------------------------
-
-	cPortalVisibility::~cPortalVisibility()
-	{
-	}
-
-	//-----------------------------------------------------------------------
-
-
-	//////////////////////////////////////////////////////////////////////////
-	// PORTAL VISIBILTY SET
-	//////////////////////////////////////////////////////////////////////////
-
-	//-----------------------------------------------------------------------
-
 	cPortalVisibilitySet::cPortalVisibilitySet(cSectorVisibilityContainer *apContainer,
 												cPortalVisibilitySet *apParent)
 	{
@@ -114,11 +94,6 @@ namespace hpl {
 		bStart = false;
 
 		mpContainer = apContainer;
-	}
-
-	cSectorVisibility::~cSectorVisibility()
-	{
-
 	}
 
 	//-----------------------------------------------------------------------

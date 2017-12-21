@@ -57,9 +57,6 @@ namespace hpl {
 	{
 		friend class cAINodeContainer;
 	public:
-		cAINode();
-		~cAINode();
-
 		void AddEdge(cAINode *pNode);
 
 		int GetEdgeNum() const { return (int)mvEdges.size();}

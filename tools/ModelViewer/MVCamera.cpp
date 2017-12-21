@@ -64,13 +64,6 @@ cMVCamera::cMVCamera(cGame *apGame, float afSpeed,cVector3f avStartPos,bool abSh
 
 //-----------------------------------------------------------------------
 
-cMVCamera::~cMVCamera()
-{
-
-}
-
-//-----------------------------------------------------------------------
-
 void cMVCamera::Update(float afFrameTime)
 {
 	if(mpGame->GetInput()->IsTriggerd("Escape"))

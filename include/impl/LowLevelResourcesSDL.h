@@ -29,7 +29,6 @@ namespace hpl {
 	{
 	public:
 		cLowLevelResourcesSDL(cLowLevelGraphicsSDL *apLowLevelGraphics);
-		~cLowLevelResourcesSDL();
 
 		void FindFilesInDir(tWStringList &alstStrings, tWString asDir, tWString asMask);
 

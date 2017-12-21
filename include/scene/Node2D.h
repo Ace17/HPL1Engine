@@ -29,7 +29,6 @@ namespace hpl {
 	{
 	public:
 		cNode2D();
-		virtual ~cNode2D();
 
 		iNode* CreateChild();
 		cNode2D* CreateChild2D();

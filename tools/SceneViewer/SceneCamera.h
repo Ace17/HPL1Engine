@@ -24,7 +24,6 @@ class cSceneCamera : public iUpdateable
 {
 public:
 	cSceneCamera(cGame *apGame, float afSpeed,cVector3f avStartPos,bool abShowFPS);
-	~cSceneCamera();
 
 	void Update(float afFrameTime);
 

@@ -48,13 +48,6 @@ cSceneCamera::cSceneCamera(cGame *apGame, float afSpeed,cVector3f avStartPos,boo
 
 //-----------------------------------------------------------------------
 
-cSceneCamera::~cSceneCamera()
-{
-
-}
-
-//-----------------------------------------------------------------------
-
 void cSceneCamera::Update(float afFrameTime)
 {
 	if(mpGame->GetInput()->IsTriggerd("Escape"))

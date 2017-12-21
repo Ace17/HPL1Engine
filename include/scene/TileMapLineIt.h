@@ -37,7 +37,6 @@ namespace hpl {
 		 * \return
 		 */
 		cTileMapLineIt(cVector2f avStartPos, cVector2f avEndPos, cTileMap* apTileMap, int alLayer);
-		~cTileMapLineIt();
 
 		bool HasNext();
 		cTile* Next();

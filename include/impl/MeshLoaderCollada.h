@@ -458,7 +458,6 @@ namespace hpl {
 	{
 	public:
 		cMeshLoaderCollada(iLowLevelGraphics *apLowLevelGraphics);
-		~cMeshLoaderCollada();
 
 		cMesh* LoadMesh(const tString& asFile, tMeshLoadFlag aFlags);
 		bool SaveMesh(cMesh* apMesh,const tString& asFile){return false;}

@@ -52,13 +52,6 @@ cHOECamera::cHOECamera(cGame *apGame, float afSpeed,cVector3f avStartPos,bool ab
 
 //-----------------------------------------------------------------------
 
-cHOECamera::~cHOECamera()
-{
-
-}
-
-//-----------------------------------------------------------------------
-
 void cHOECamera::Update(float afFrameTime)
 {
 	if(mpGame->GetInput()->IsTriggerd("Escape"))

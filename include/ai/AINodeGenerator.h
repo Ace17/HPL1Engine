@@ -52,9 +52,6 @@ namespace hpl {
 	class cAINodeGenerator : public iPhysicsRayCallback
 	{
 	public:
-		cAINodeGenerator();
-		~cAINodeGenerator();
-
 		void Generate(cWorld3D* apWorld,cAINodeGeneratorParams *apParams);
 
 	private:

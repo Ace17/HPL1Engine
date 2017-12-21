@@ -110,7 +110,7 @@ namespace hpl {
 	{
 	public:
 		iPhysicsWorld();
-		virtual ~iPhysicsWorld();
+		virtual ~iPhysicsWorld() = default;
 
 		//########################################################################################
 		//! \name General

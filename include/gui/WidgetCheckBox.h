@@ -29,7 +29,6 @@ namespace hpl {
 	{
 	public:
 		cWidgetCheckBox(cGuiSet *apSet, cGuiSkin *apSkin);
-		virtual ~cWidgetCheckBox();
 
 		void SetChecked(bool abX);
 		bool IsChecked(){return mbChecked;}

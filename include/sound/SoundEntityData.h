@@ -29,7 +29,6 @@ namespace hpl {
 	friend class cSoundEntity;
 	public:
 		cSoundEntityData(tString asName);
-		~cSoundEntityData();
 
 		bool CreateFromFile(const tString &asFile);
 

@@ -35,7 +35,6 @@ namespace hpl {
 	{
 	public:
 		cMeshCreator(iLowLevelGraphics *apLowLevelGraphics, cResources *apResources);
-		~cMeshCreator();
 
 		cMesh2D *Create2D(tString asName, cVector2f mvSize);
 

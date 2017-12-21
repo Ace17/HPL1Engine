@@ -29,7 +29,6 @@ namespace hpl {
 	{
 	public:
 		cWidgetFrame(cGuiSet *apSet, cGuiSkin *apSkin);
-		virtual ~cWidgetFrame();
 
 		void SetDrawFrame(bool abX){ mbDrawFrame = abX;}
 		bool GetDrawFrame(){ return mbDrawFrame;}

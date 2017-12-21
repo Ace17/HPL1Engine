@@ -30,8 +30,6 @@ namespace hpl
 	public:
 		cOpenALSoundEnvironment ( );
 
-		~cOpenALSoundEnvironment ();
-
 		bool CreateFromFile(const tString &asFile);
 
 		inline float GetDensity( ) { return mfDensity; }

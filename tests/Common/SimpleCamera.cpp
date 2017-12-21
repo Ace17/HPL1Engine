@@ -54,13 +54,6 @@ cSimpleCamera::cSimpleCamera(cGame *apGame, float afSpeed,cVector3f avStartPos,b
 
 //-----------------------------------------------------------------------
 
-cSimpleCamera::~cSimpleCamera()
-{
-
-}
-
-//-----------------------------------------------------------------------
-
 void cSimpleCamera::Update(float afFrameTime)
 {
 	m_mtxLastView = mpCamera->GetViewMatrix();

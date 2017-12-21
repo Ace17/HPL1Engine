@@ -34,7 +34,6 @@ namespace hpl {
 		 * \return
 		 */
 		cLogicTimer(int alUpdatesPerSec,iLowLevelSystem *apLowLevelSystem);
-		~cLogicTimer();
 
 		/**
 		 * Reset the time. Do this when the logical update of the game has been ide, ie while loading.

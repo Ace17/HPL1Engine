@@ -37,7 +37,7 @@ namespace hpl {
 	{
 	public:
 		iLowLevelHaptic();
-		virtual ~iLowLevelHaptic();
+		virtual ~iLowLevelHaptic() {};
 
 		//########################################################################################
 		//! \name General

@@ -259,7 +259,6 @@ namespace hpl {
 										cVector3f avSize, cGraphics* apGraphics,cResources *apResources,
 										cParticleEmitterData3D_UserData *apData
 										);
-		~cParticleEmitter3D_UserData(void);
 
 		void Kill();
 

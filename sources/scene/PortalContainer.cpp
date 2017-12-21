@@ -175,11 +175,6 @@ namespace hpl {
 		mbActive = true;
 	}
 
-	cPortal::~cPortal()
-	{
-
-	}
-
 	//-----------------------------------------------------------------------
 
 	void cPortal::SetTargetSector(tString asSectorId)

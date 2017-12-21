@@ -34,7 +34,6 @@ namespace hpl {
 	{
 	public:
 		cFileSearcher(iLowLevelResources *apLowLevelResources);
-		~cFileSearcher();
 
 		/**
 		 * Adds a directory that will be searched when looking for files.

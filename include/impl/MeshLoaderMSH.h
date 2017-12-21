@@ -37,7 +37,6 @@ namespace hpl {
 	{
 	public:
 		cMeshLoaderMSH(iLowLevelGraphics *apLowLevelGraphics);
-		~cMeshLoaderMSH();
 
 		cMesh* LoadMesh(const tString& asFile, tMeshLoadFlag aFlags);
 		bool SaveMesh(cMesh* apMesh,const tString& asFile);

@@ -27,7 +27,6 @@ namespace hpl {
 	{
 	public:
 		cLight2DPoint(tString asName);
-		~cLight2DPoint();
 
 		const cRect2f& GetBoundingBox();
 		bool UpdateBoundingBox();

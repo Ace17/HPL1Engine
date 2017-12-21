@@ -127,7 +127,7 @@ namespace hpl {
 	#endif
 	public:
 		iPhysicsController(const tString &asName, iPhysicsWorld *apWorld);
-		virtual ~iPhysicsController();
+		virtual ~iPhysicsController() = default;
 
 		void Update(float afTimeStep);
 

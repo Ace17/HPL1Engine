@@ -55,8 +55,6 @@ namespace hpl {
 			cRenderer2D* apRenderer, cGpuProgramManager* apProgramManager,
 			eMaterialPicture aPicture, cRenderer3D *apRenderer3D);
 
-		virtual ~cMaterial_EnvMap_Reflect();
-
 		tTextureTypeList GetTextureTypes();
 
 		bool UsesType(eMaterialRenderType aType);

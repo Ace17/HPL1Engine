@@ -33,7 +33,6 @@ namespace hpl {
 	{
 	public:
 		cCharacterBodyNewton(const tString &asName,iPhysicsWorld *apWorld, const cVector3f avSize);
-		~cCharacterBodyNewton();
 
 	private:
 	};

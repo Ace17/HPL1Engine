@@ -24,7 +24,6 @@ class cMVCamera : public iUpdateable
 {
 public:
 	cMVCamera(cGame *apGame, float afSpeed,cVector3f avStartPos,bool abShowFPS);
-	~cMVCamera();
 
 	void Update(float afFrameTime);
 

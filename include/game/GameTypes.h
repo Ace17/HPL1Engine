@@ -29,8 +29,6 @@ namespace hpl {
 	{
 		kSerializableClassInit(cScriptVar)
 	public:
-		cScriptVar();
-
 		tString msName;
 		int mlVal;
 	};

@@ -133,7 +133,6 @@ namespace hpl {
 	friend class cSaveObjectHandler;
 	public:
 		iSaveObject();
-		~iSaveObject();
 
 		/**
 		* Get a unique id for this object.
@@ -183,10 +182,6 @@ namespace hpl {
 	class cSaveObjectHandler
 	{
 	public:
-		cSaveObjectHandler();
-		~cSaveObjectHandler();
-
-	public:
 		void Add(iSaveObject *pObject);
 
 		iSaveObject* Get(int alId);
@@ -216,9 +211,6 @@ namespace hpl {
 	class cSaveDataHandler : public iContainer
 	{
 	public:
-		cSaveDataHandler();
-		~cSaveDataHandler();
-
 		void Add(iSaveData *pData);
 
 		cSaveDataIterator GetIterator();

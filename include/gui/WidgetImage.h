@@ -29,7 +29,6 @@ namespace hpl {
 	{
 	public:
 		cWidgetImage(cGuiSet *apSet, cGuiSkin *apSkin);
-		virtual ~cWidgetImage();
 
 		void SetImage(cGuiGfxElement *apGfx);
 		cGuiGfxElement* GetImage(){ return mpGfxImage;}

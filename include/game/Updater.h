@@ -39,7 +39,6 @@ namespace hpl {
 	{
 	public:
 		cUpdater(iLowLevelSystem *apLowLevelSystem);
-		~cUpdater();
 
 		void Reset();
 

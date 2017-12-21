@@ -29,7 +29,6 @@ namespace hpl {
 	{
 	public:
 		cWidgetLabel(cGuiSet *apSet, cGuiSkin *apSkin);
-		virtual ~cWidgetLabel();
 
 		void SetTextAlign(eFontAlign aType){mTextAlign = aType;}
 		eFontAlign GetTextAlign(){ return mTextAlign;}

@@ -44,9 +44,6 @@ namespace hpl {
 	class cPortalVisibility
 	{
 	public:
-		cPortalVisibility();
-		~cPortalVisibility();
-
 		cShadowVolumeBV mShadow;
 		cPortal *mpPortal;
 		bool mbNullShadow;
@@ -91,7 +88,6 @@ namespace hpl {
 	friend class cSectorVisibilityContainer;
 	public:
 		cSectorVisibility(cSectorVisibilityContainer *apContainer);
-		~cSectorVisibility();
 
 		bool PortalExists(cPortal *apPortal);
 

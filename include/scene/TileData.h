@@ -63,7 +63,6 @@ namespace hpl {
 	{
 	public:
 		cTileDataNormal(cImageManager* apImageManager,cVector2f avTileSize);
-		~cTileDataNormal();
 
 		void Destroy();
 		bool IsSolid(){return mbIsSolid;}

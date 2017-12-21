@@ -121,7 +121,7 @@ namespace hpl {
 	#endif
 	public:
 		iPhysicsBody(const tString &asName, iPhysicsWorld *apWorld,iCollideShape *apShape);
-		virtual ~iPhysicsBody();
+		virtual ~iPhysicsBody() = default;
 
 		void Destroy();
 

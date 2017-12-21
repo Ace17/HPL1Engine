@@ -124,7 +124,6 @@ namespace hpl {
 	friend class cSector;
 	public:
 		cPortal(int alId, cPortalContainer *apContainer);
-		~cPortal();
 
 		void SetTargetSector(tString asSectorId);
 		cSector *GetTargetSector();

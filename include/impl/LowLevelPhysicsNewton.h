@@ -30,9 +30,6 @@ namespace hpl {
 	class cLowLevelPhysicsNewton : public iLowLevelPhysics
 	{
 	public:
-		cLowLevelPhysicsNewton();
-		~cLowLevelPhysicsNewton();
-
 		iPhysicsWorld* CreateWorld();
 	};
 };

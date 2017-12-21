@@ -44,8 +44,6 @@ namespace hpl {
 	class cCollisionMesh2D
 	{
 	public:
-		cCollisionMesh2D(){}
-
 		tVector2fVec mvPos;
 		tVector2fVec mvNormal;
 	};
@@ -62,9 +60,6 @@ namespace hpl {
 	class cMesh2D
 	{
 	public:
-		cMesh2D();
-		~cMesh2D();
-
 		void AddVertex(cVector2f avPos, cVector2f avTexCoord=0, cColor aCol=1);
 		void AddIndex(unsigned int alIndex);
 		void AddEdgeIndex(unsigned int alIndex);

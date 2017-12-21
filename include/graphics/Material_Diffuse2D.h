@@ -30,7 +30,6 @@ namespace hpl {
 			cImageManager* apImageManager, cTextureManager *apTextureManager,
 			cRenderer2D* apRenderer, cGpuProgramManager* apProgramManager,
 			eMaterialPicture aPicture, cRenderer3D *apRenderer3D);
-		~cMaterial_Diffuse2D();
 
 		void Compile();
 		bool StartRendering(eMaterialRenderType aType,iCamera* apCam,iLight *pLight);

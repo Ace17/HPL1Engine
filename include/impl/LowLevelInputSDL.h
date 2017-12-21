@@ -32,7 +32,6 @@ namespace hpl {
 	{
 	public:
 		cLowLevelInputSDL(iLowLevelGraphics *apLowLevelGraphics);
-		~cLowLevelInputSDL();
 
 		void LockInput(bool abX);
 

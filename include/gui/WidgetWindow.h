@@ -32,7 +32,6 @@ namespace hpl {
 	{
 	public:
 		cWidgetWindow(cGuiSet *apSet, cGuiSkin *apSkin);
-		virtual ~cWidgetWindow();
 
 		void SetStatic(bool abX);
 		bool GetStatic(){return mbStatic;}

@@ -47,10 +47,6 @@ namespace hpl
 	{
 	}
 
-	cOpenALSoundEnvironment::~cOpenALSoundEnvironment()
-	{
-	}
-
 	bool cOpenALSoundEnvironment::CreateFromFile(const tString &asFile)
 	{
 		tString strType;

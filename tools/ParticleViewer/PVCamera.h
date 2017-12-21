@@ -24,7 +24,6 @@ class cPVCamera : public iUpdateable
 {
 public:
 	cPVCamera(cGame *apGame, float afSpeed,cVector3f avStartPos,bool abShowFPS);
-	~cPVCamera();
 
 	void Update(float afFrameTime);
 
