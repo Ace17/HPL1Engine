@@ -22,8 +22,6 @@
 #include "system/SystemTypes.h"
 #include "system/SerializeClass.h"
 
-class TiXmlElement;
-
 #define kSaveData_LoadFromBegin(aClass) \
 							__super::LoadFromSaveData(apSaveData); \
 							cSaveData_##aClass *pData = static_cast<cSaveData_##aClass*>(apSaveData);
