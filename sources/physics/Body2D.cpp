@@ -410,15 +410,7 @@ namespace hpl {
 
 	void cBody2D::DetachBody(cBody2D* apBody)
 	{
-		tBody2DListIt it = mlstAttachedBodies.begin();
-		for(;it != mlstAttachedBodies.end();it++)
-		{
-			if(*it == apBody)
-			{
-				mlstAttachedBodies.erase(it);
-				break;
-			}
-		}
+		STLFindAndRemoveSingle(mlstAttachedBodies, apBody);
 	}
 
 	//-----------------------------------------------------------------------

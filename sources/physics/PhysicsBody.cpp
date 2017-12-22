@@ -182,14 +182,7 @@ namespace hpl {
 
 	void iPhysicsBody::RemoveJoint(iPhysicsJoint *apJoint)
 	{
-		std::vector<iPhysicsJoint*>::iterator it = mvJoints.begin();
-		for(; it != mvJoints.end(); ++it)
-		{
-			if(*it == apJoint){
-				mvJoints.erase(it);
-				break;
-			}
-		}
+		STLFindAndRemoveSingle(mvJoints, apJoint);
 	}
 
 	//-----------------------------------------------------------------------
@@ -274,15 +267,7 @@ namespace hpl {
 
 	void iPhysicsBody::RemoveBodyCallback(iPhysicsBodyCallback *apCallback)
 	{
-		tPhysicsBodyCallbackListIt it = mlstBodyCallbacks.begin();
-		for(; it != mlstBodyCallbacks.end(); ++it)
-		{
-			if(apCallback == *it)
-			{
-				mlstBodyCallbacks.erase(it);
-				break;
-			}
-		}
+		STLFindAndRemoveSingle(mlstBodyCallbacks, apCallback);
 	}
 
 	//-----------------------------------------------------------------------
@@ -358,15 +343,7 @@ namespace hpl {
 
 	void iPhysicsBody::RemoveAttachedCharacter(iCharacterBody *apChar)
 	{
-		std::list<iCharacterBody*>::iterator it = mlstAttachedCharacters.begin();
-		for(; it != mlstAttachedCharacters.end(); ++it)
-		{
-			if(apChar == *it)
-			{
-				mlstAttachedCharacters.erase(it);
-				break;
-			}
-		}
+		STLFindAndRemoveSingle(mlstAttachedCharacters, apChar);
 	}
 
 	//-----------------------------------------------------------------------

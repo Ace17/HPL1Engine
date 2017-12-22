@@ -335,6 +335,21 @@ namespace hpl {
 	//--------------------------------------------------------
 
 	template <class CONT,class T>
+	void STLFindAndRemoveSingle(CONT &aCont, T* pObject)
+	{
+		typename CONT::iterator it = aCont.begin();
+		for(;it != aCont.end();it++)
+		{
+			if(*it == pObject){
+				aCont.erase(it);
+				break;
+			}
+		}
+	}
+
+	//--------------------------------------------------------
+
+	template <class CONT,class T>
 	void STLFindAndRemove(CONT &aCont, T* pObject)
 	{
 		typename CONT::iterator it = aCont.begin();
