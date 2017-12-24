@@ -94,11 +94,6 @@ namespace hpl {
 		mvVirtualSize.x = 800;
 		mvVirtualSize.y = 600;
 
-
-		#ifdef WIN32
-			mhKeyTrapper = NULL;
-		#endif
-
 		mpPixelFormat = hplNew(cSDLPixelFormat, () );
 
 		mpRenderTarget=NULL;
@@ -133,11 +128,6 @@ namespace hpl {
 
 	cLowLevelGraphicsSDL::~cLowLevelGraphicsSDL()
 	{
-		//#ifdef WIN32
-		//	if(mhKeyTrapper) FreeLibrary(mhKeyTrapper);
-		//#endif
-
-
 		SDL_SetGammaRamp(mvStartGammaArray[0],mvStartGammaArray[1],mvStartGammaArray[2]);
 
 		hplFree(mpVertexArray);
