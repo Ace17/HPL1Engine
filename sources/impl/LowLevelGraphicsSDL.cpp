@@ -154,7 +154,6 @@ namespace hpl {
 	{
 		mvScreenSize.x = alWidth;
 		mvScreenSize.y = alHeight;
-		mlBpp = alBpp;
 
 		mlMultisampling = alMultisampling;
 

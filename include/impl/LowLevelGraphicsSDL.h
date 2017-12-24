@@ -241,7 +241,6 @@ namespace hpl {
 		cVector2l mvScreenSize;
 		cVector2f mvVirtualSize;
 		int mlMultisampling;
-		int mlBpp;
 
 		//Windows stuff
 		#if defined(WIN32)
