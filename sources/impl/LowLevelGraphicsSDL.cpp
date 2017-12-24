@@ -108,12 +108,12 @@ namespace hpl {
 		//Create the batch arrays:
 		mlBatchStride = 13;
 		//3 Pos floats, 4 color floats, 3 Tex coord floats .
-		mpVertexArray = (float*)hplMalloc(sizeof(float) * mlBatchStride * mlBatchArraySize);
-		mpIndexArray = (unsigned int*)hplMalloc(sizeof(unsigned int) * mlBatchArraySize); //Index is one int.
+		mpVertexArray = new float[mlBatchStride * mlBatchArraySize];
+		mpIndexArray = new unsigned int[mlBatchArraySize]; //Index is one int.
 
 		for(int i=0;i<MAX_TEXTUREUNITS;i++)
 		{
-			mpTexCoordArray[i] = (float*)hplMalloc(sizeof(float) * 3 * mlBatchArraySize);
+			mpTexCoordArray[i] = new float[3 * mlBatchArraySize];
 			mbTexCoordArrayActive[i] = false;
 			mlTexCoordArrayCount[i]=0;
 		}
@@ -130,9 +130,9 @@ namespace hpl {
 	{
 		SDL_SetGammaRamp(mvStartGammaArray[0],mvStartGammaArray[1],mvStartGammaArray[2]);
 
-		hplFree(mpVertexArray);
-		hplFree(mpIndexArray);
-		for(int i=0;i<MAX_TEXTUREUNITS;i++)	hplFree(mpTexCoordArray[i]);
+		hplDeleteArray(mpVertexArray);
+		hplDeleteArray(mpIndexArray);
+		for(int i=0;i<MAX_TEXTUREUNITS;i++)	hplDeleteArray(mpTexCoordArray[i]);
 
 		hplDelete(mpPixelFormat);
 
