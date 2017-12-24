@@ -42,8 +42,6 @@ namespace hpl {
 		cKeyPress GetKey();
 		bool KeyIsPressed();
 		eKeyModifier GetModifier();
-		tString KeyToString(eKey);
-		eKey StringToKey(tString);
 
 	private:
 		eKey SDLToKey(int alKey);

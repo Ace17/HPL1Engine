@@ -52,18 +52,6 @@ namespace hpl {
 		 * \return The current modifiers.
 		 */
 		virtual eKeyModifier GetModifier()=0;
-		/**
-		 * \todo Implement!
-		 * \param eKey The key to change to string.
-		 * \return The name of the key as a string.
-		 */
-		virtual tString KeyToString(eKey)=0;
-		/**
-		 * \todo Implement!
-		 * \param tString NAme of the key
-		 * \return enum of the key.
-		 */
-		virtual eKey StringToKey(tString)=0;
 	};
 
 };
