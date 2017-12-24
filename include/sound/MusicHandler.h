@@ -102,8 +102,6 @@ namespace hpl {
 		 * Remove lock.
 		 */
 		void UnLock();
-		tString GetCurrentSongName();
-		float GetCurrentSongVolume();
 
 		cMusicEntry* GetCurrentSong();
 

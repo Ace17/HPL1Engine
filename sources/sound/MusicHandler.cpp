@@ -200,26 +200,6 @@ namespace hpl {
 
 	//-----------------------------------------------------------------------
 
-	tString cMusicHandler::GetCurrentSongName()
-	{
-		if(mpMainSong!=NULL)
-			return mpMainSong->msFileName;
-		else
-			return "";
-	}
-
-	//-----------------------------------------------------------------------
-
-	float cMusicHandler::GetCurrentSongVolume()
-	{
-		if(mpMainSong!=NULL)
-			return mpMainSong->mfVolume;
-		else
-			return 0;
-	}
-
-	//-----------------------------------------------------------------------
-
 	cMusicEntry* cMusicHandler::GetCurrentSong()
 	{
 		return mpMainSong;
