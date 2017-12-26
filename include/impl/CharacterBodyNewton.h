@@ -20,9 +20,7 @@
 #define HPL_CHARACTER_BODY_NEWTON_H
 
 #include "physics/CharacterBody.h"
-#if defined(__linux__) || defined(__APPLE__)
-#include <unistd.h>
-#endif
+#include <stddef.h> // size_t
 #include <Newton.h>
 
 namespace hpl {

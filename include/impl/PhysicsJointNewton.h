@@ -19,9 +19,7 @@
 #ifndef HPL_PHYSICS_JOINT_NEWTON_H
 #define HPL_PHYSICS_JOINT_NEWTON_H
 
-#if defined(__linux__) || defined(__APPLE__)
-#include <unistd.h>
-#endif
+#include <stddef.h> // size_t
 #include <Newton.h>
 #include "impl/PhysicsWorldNewton.h"
 #include "impl/PhysicsBodyNewton.h"
