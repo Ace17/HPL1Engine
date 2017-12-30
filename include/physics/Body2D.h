@@ -21,6 +21,7 @@
 #include "math/MathTypes.h"
 
 #include <map>
+#include <memory>
 #include "scene/Entity2D.h"
 
 namespace hpl {
@@ -155,8 +156,8 @@ namespace hpl {
 		cCollider2D* mpCollider;
 		cNode2D* mpNode;
 
-		cCollisionMesh2D *mpCollMesh;
-		cCollisionMesh2D *mpBaseCollMesh;
+		std::unique_ptr<cCollisionMesh2D> mpCollMesh;
+		std::unique_ptr<cCollisionMesh2D> mpBaseCollMesh;
 
 		bool mbOnGround;
 		bool mbGroundFrictionX;

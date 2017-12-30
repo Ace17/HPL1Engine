@@ -18,6 +18,8 @@
  */
 #pragma once
 
+#include <memory>
+
 #include "math/MathTypes.h"
 #include "physics/PhysicsMaterial.h"
 
@@ -58,7 +60,7 @@ namespace hpl {
 		int mlPSPrio;
 	};
 
-	typedef std::vector<cSurfaceImpactData*> tSurfaceImpactDataVec;
+	typedef std::vector<std::unique_ptr<cSurfaceImpactData>> tSurfaceImpactDataVec;
 	typedef tSurfaceImpactDataVec::iterator tSurfaceImpactDataVecIt;
 
 	//----------------------------------------
@@ -67,7 +69,6 @@ namespace hpl {
 	{
 	public:
 		cSurfaceData(const tString &asName, cPhysics *apPhysics,cResources *apResources);
-		~cSurfaceData();
 
 		const tString& GetName() const{ return msName;}
 

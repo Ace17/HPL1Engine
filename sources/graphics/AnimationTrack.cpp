@@ -45,13 +45,6 @@ namespace hpl {
 
 	//-----------------------------------------------------------------------
 
-	cAnimationTrack::~cAnimationTrack()
-	{
-		STLDeleteAll(mvKeyFrames);
-	}
-
-	//-----------------------------------------------------------------------
-
 	//////////////////////////////////////////////////////////////////////////
 	// PUBLIC METHODS
 	//////////////////////////////////////////////////////////////////////////
@@ -73,7 +66,7 @@ namespace hpl {
 		//Check so that this is the first
 		if(afTime > mfMaxFrameTime || mvKeyFrames.empty())
 		{
-			mvKeyFrames.push_back(pFrame);
+			mvKeyFrames.push_back(std::unique_ptr<cKeyFrame>(pFrame));
 			mfMaxFrameTime = afTime;
 		}
 		else
@@ -86,7 +79,7 @@ namespace hpl {
 					break;
 				}
 			}
-			mvKeyFrames.insert(it,pFrame);
+			mvKeyFrames.insert(it, std::unique_ptr<cKeyFrame>(pFrame));
 		}
 
 		return pFrame;
@@ -162,8 +155,8 @@ namespace hpl {
 		//If longer than max time return last frame and first
 		if(afTime >= mfMaxFrameTime)
 		{
-			*apKeyFrameA = mvKeyFrames[mvKeyFrames.size()-1];
-			*apKeyFrameB = mvKeyFrames[0];
+			*apKeyFrameA = mvKeyFrames[mvKeyFrames.size()-1].get();
+			*apKeyFrameB = mvKeyFrames[0].get();
 
 			//Get T between end to start again. (the last frame doesn't mean the anim is over.
 			// In that case wrap to the first frame).
@@ -192,14 +185,14 @@ namespace hpl {
 		//If so return the first frame only.
 		if(lIdxB == 0)
 		{
-			*apKeyFrameA = mvKeyFrames[0];
-			*apKeyFrameB = mvKeyFrames[0];
+			*apKeyFrameA = mvKeyFrames[0].get();
+			*apKeyFrameB = mvKeyFrames[0].get();
 			return 0.0f;
 		}
 
 		//Get the frames
-		*apKeyFrameA = mvKeyFrames[lIdxB-1];
-		*apKeyFrameB = mvKeyFrames[lIdxB];
+		*apKeyFrameA = mvKeyFrames[lIdxB-1].get();
+		*apKeyFrameB = mvKeyFrames[lIdxB].get();
 
 		float fDeltaT = (*apKeyFrameB)->time - (*apKeyFrameA)->time;
 

@@ -71,14 +71,6 @@ namespace hpl {
 
 	//-----------------------------------------------------------------------
 
-	cSurfaceData::~cSurfaceData()
-	{
-		STLDeleteAll(mvImpactData);
-		STLDeleteAll(mvHitData);
-	}
-
-	//-----------------------------------------------------------------------
-
 	//////////////////////////////////////////////////////////////////////////
 	// PUBLIC METHODS
 	//////////////////////////////////////////////////////////////////////////
@@ -103,7 +95,7 @@ namespace hpl {
 		{
 			if(mvImpactData[i]->GetMinSpeed() <= afSpeed)
 			{
-				pData = mvImpactData[i];
+				pData = mvImpactData[i].get();
 				break;
 			}
 		}
@@ -277,7 +269,7 @@ namespace hpl {
 		{
 			if(mvImpactData[i]->GetMinSpeed() <= afSpeed)
 			{
-				pDataA = mvImpactData[i];
+				pDataA = mvImpactData[i].get();
 				break;
 			}
 		}
@@ -290,7 +282,7 @@ namespace hpl {
 			{
 				if(apSecondSurface->mvImpactData[i]->GetMinSpeed() <= afSpeed)
 				{
-					pDataB = apSecondSurface->mvImpactData[i];
+					pDataB = apSecondSurface->mvImpactData[i].get();
 					break;
 				}
 			}
@@ -599,17 +591,18 @@ namespace hpl {
 
 	cSurfaceImpactData* cSurfaceData::CreateImpactData(float afMinSpeed)
 	{
-		cSurfaceImpactData *pData = hplNew( cSurfaceImpactData, () );
+		auto pData = std::make_unique<cSurfaceImpactData>();
 		pData->mfMinSpeed = afMinSpeed;
 
-		mvImpactData.push_back(pData);
+		auto r = pData.get();
+		mvImpactData.push_back(std::move(pData));
 
-		return pData;
+		return r;
 	}
 
 	cSurfaceImpactData* cSurfaceData::GetImpactData(int alIdx)
 	{
-		return mvImpactData[alIdx];
+		return mvImpactData[alIdx].get();
 	}
 
 	int cSurfaceData::GetImpactDataNum()
@@ -623,7 +616,7 @@ namespace hpl {
 		{
 			if(afSpeed >= mvImpactData[i]->GetMinSpeed())
 			{
-				return mvImpactData[i];
+				return mvImpactData[i].get();
 			}
 		}
 		return NULL;
@@ -633,17 +626,18 @@ namespace hpl {
 
 	cSurfaceImpactData* cSurfaceData::CreateHitData(float afMinSpeed)
 	{
-		cSurfaceImpactData *pData = hplNew( cSurfaceImpactData, () );
+		auto pData = std::make_unique<cSurfaceImpactData>();
 		pData->mfMinSpeed = afMinSpeed;
 
-		mvHitData.push_back(pData);
+		auto r = pData.get();
+		mvHitData.push_back(std::move(pData));
 
-		return pData;
+		return r;
 	}
 
 	cSurfaceImpactData* cSurfaceData::GetHitData(int alIdx)
 	{
-		return mvHitData[alIdx];
+		return mvHitData[alIdx].get();
 	}
 
 	int cSurfaceData::GetHitDataNum()
@@ -657,7 +651,7 @@ namespace hpl {
 		{
 			if(afSpeed >= mvHitData[i]->GetMinSpeed())
 			{
-				return mvHitData[i];
+				return mvHitData[i].get();
 			}
 		}
 		return NULL;

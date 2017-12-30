@@ -96,9 +96,6 @@ namespace hpl {
 		float time;
 	};
 
-	typedef std::vector<cKeyFrame*> tKeyFramePtrVec;
-	typedef tKeyFramePtrVec::iterator tKeyFramePtrVecIt;
-
 	typedef std::vector<cKeyFrame> tKeyFrameVec;
 	typedef tKeyFrameVec::iterator tKeyFrameVecIt;
 

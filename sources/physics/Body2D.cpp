@@ -41,8 +41,8 @@ namespace hpl {
 		mpMesh = apMesh;
 		mpCollider = apCollider;
 
-		mpCollMesh = mpMesh->CreateCollisonMesh(0,mvSize);
-		mpBaseCollMesh = mpMesh->CreateCollisonMesh(0,mvSize);
+		mpCollMesh.reset(mpMesh->CreateCollisonMesh(0,mvSize));
+		mpBaseCollMesh.reset(mpMesh->CreateCollisonMesh(0,mvSize));
 
 		/*for(int i=0;i<(int)mpCollMesh->mvPos.size();i++)
 		{
@@ -89,12 +89,6 @@ namespace hpl {
 	}
 
 	//-----------------------------------------------------------------------
-
-	cBody2D::~cBody2D()
-	{
-		hplDelete(mpCollMesh);
-		hplDelete(mpBaseCollMesh);
-	}
 
 	//-----------------------------------------------------------------------
 
@@ -396,7 +390,7 @@ namespace hpl {
 
 	cCollisionMesh2D* cBody2D::GetCollisionMesh()
 	{
-		return mpCollMesh;
+		return mpCollMesh.get();
 	}
 
 	//-----------------------------------------------------------------------

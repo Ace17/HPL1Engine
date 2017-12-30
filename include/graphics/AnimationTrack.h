@@ -18,6 +18,7 @@
  */
 #pragma once
 
+#include <memory>
 #include "math/MathTypes.h"
 #include "graphics/GraphicsTypes.h"
 #include "system/SystemTypes.h"
@@ -26,6 +27,9 @@ namespace hpl {
 
 	class cAnimation;
 	class cNode3D;
+
+	typedef std::vector<std::unique_ptr<cKeyFrame>> tKeyFramePtrVec;
+	typedef tKeyFramePtrVec::iterator tKeyFramePtrVecIt;
 
 	class cAnimationTrack
 	{
@@ -41,7 +45,7 @@ namespace hpl {
 		 */
 		cKeyFrame* CreateKeyFrame(float afTime);
 
-		inline cKeyFrame* GetKeyFrame(int alIndex){ return mvKeyFrames[alIndex];}
+		inline cKeyFrame* GetKeyFrame(int alIndex){ return mvKeyFrames[alIndex].get();}
 		inline int GetKeyFrameNum(){ return (int) mvKeyFrames.size();}
 
 		inline tAnimTransformFlag GetTransformFlags(){ return mTransformFlags;}
