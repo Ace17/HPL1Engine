@@ -56,11 +56,7 @@ namespace hpl {
 		mpLowLevelGraphics = hplNew( cLowLevelGraphicsSDL,() );
 		mpLowLevelInput = hplNew( cLowLevelInputSDL,(mpLowLevelGraphics) );
 		mpLowLevelResources = hplNew( cLowLevelResourcesSDL,((cLowLevelGraphicsSDL *)mpLowLevelGraphics) );
-//		#ifdef WIN32
-//			mpLowLevelSound = hplNew( cLowLevelSoundFmod, () );
-//		#else
-			mpLowLevelSound	= hplNew( cLowLevelSoundOpenAL,() );
-//		#endif
+		mpLowLevelSound	= hplNew( cLowLevelSoundOpenAL,() );
 		mpLowLevelPhysics = hplNew( cLowLevelPhysicsNewton,() );
 
 #ifdef INCLUDE_HAPTIC
