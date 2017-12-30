@@ -1637,7 +1637,7 @@ namespace hpl {
 
 		////////////////////////////
 		//Sub Entities
-		pData->mvSubEntities.Resize(GetSubMeshEntityNum());
+		pData->mvSubEntities.resize(GetSubMeshEntityNum());
 		for(int i=0; i<GetSubMeshEntityNum(); i++)
 		{
 			cSubMeshEntity *pSubEntity = GetSubMeshEntity(i);
@@ -1647,7 +1647,7 @@ namespace hpl {
 
 		////////////////////////////
 		//Animation states
-		pData->mvAnimStates.Resize(GetAnimationStateNum());
+		pData->mvAnimStates.resize(GetAnimationStateNum());
 		for(int i=0; i<GetAnimationStateNum(); i++)
 		{
 			cAnimationState *pAnimState = GetAnimationState(i);
@@ -1683,7 +1683,7 @@ namespace hpl {
 
 		///////////////////////
 		//Set Animation states data
-		for(size_t i=0; i< pData->mvAnimStates.Size(); ++i)
+		for(size_t i=0; i< pData->mvAnimStates.size(); ++i)
 		{
 			cAnimationState *pAnimationState = GetAnimationState((int)i);
 

@@ -76,7 +76,7 @@ namespace hpl {
 		tString msDataName;
 		cVector3f mvDataSize;
 
-		cContainerVec<cSaveData_ParticleEmitter3D> mvEmitters;
+		std::vector<cSaveData_ParticleEmitter3D> mvEmitters;
 
 		iSaveObject* CreateSaveObject(cSaveObjectHandler *apSaveObjectHandler,cGame *apGame);
 		int GetSaveCreatePrio();

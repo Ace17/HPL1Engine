@@ -80,9 +80,9 @@ namespace hpl {
 
 		int mlBodyId;
 
-		cContainerVec<cSaveData_cSubMeshEntity> mvSubEntities;
+		std::vector<cSaveData_cSubMeshEntity> mvSubEntities;
 
-		cContainerVec<cSaveData_cAnimationState> mvAnimStates;
+		std::vector<cSaveData_cAnimationState> mvAnimStates;
 
 		virtual iSaveObject* CreateSaveObject(cSaveObjectHandler *apSaveObjectHandler,cGame *apGame);
 		virtual int GetSaveCreatePrio();

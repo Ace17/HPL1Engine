@@ -351,7 +351,7 @@ namespace hpl {
 		kSaveData_SaveTo(msDataName);
 		kSaveData_SaveTo(mvDataSize);
 
-		pData->mvEmitters.Resize(GetEmitterNum());
+		pData->mvEmitters.resize(GetEmitterNum());
 		for(int i=0; i< GetEmitterNum(); ++i)
 		{
 			iParticleEmitter3D *pPE = GetEmitter(i);
@@ -370,7 +370,7 @@ namespace hpl {
 		kSaveData_LoadFrom(msDataName);
 		kSaveData_LoadFrom(mvDataSize);
 
-		if(GetEmitterNum() != pData->mvEmitters.Size())
+		if(GetEmitterNum() != pData->mvEmitters.size())
 		{
 			Error("Saved emitter number in %s/%d does not match loaded, killing system!\n",
 																			GetName().c_str(),
