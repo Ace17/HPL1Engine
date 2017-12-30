@@ -165,7 +165,7 @@ namespace hpl {
 
 	iPhysicsBody *iPhysicsWorld::GetBody(const tString &asName)
 	{
-		return (iPhysicsBody*)STLFindByName(mlstBodies, asName);
+		return STLFindByName(mlstBodies, asName);
 	}
 
 	cPhysicsBodyIterator iPhysicsWorld::GetBodyIterator()
@@ -214,7 +214,7 @@ namespace hpl {
 
 	iPhysicsJoint *iPhysicsWorld::GetJoint(const tString &asName)
 	{
-		return (iPhysicsJoint*)STLFindByName(mlstJoints, asName);
+		return STLFindByName(mlstJoints, asName);
 	}
 
 	cPhysicsJointIterator iPhysicsWorld::GetJointIterator()

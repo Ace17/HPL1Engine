@@ -299,7 +299,7 @@ namespace hpl {
 
 		return it->second;
 
-		//return (cAINode*)STLFindByName(mvNodes,asName);
+		//return STLFindByName(mvNodes,asName);
 	}
 
 	//-----------------------------------------------------------------------

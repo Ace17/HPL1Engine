@@ -380,7 +380,7 @@ namespace hpl {
 	//--------------------------------------------------------
 
 	template <class CONT>
-	void* STLFindByName(CONT &aCont,const tString& asName )
+	typename CONT::value_type STLFindByName(CONT &aCont,const tString& asName )
 	{
 		for(auto& element : aCont)
 		{

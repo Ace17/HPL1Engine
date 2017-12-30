@@ -255,7 +255,7 @@ namespace hpl {
 				}
 				else
 				{
-					pBody = (iPhysicsBody*)STLFindByName(mvBodies, sSubName);
+					pBody = STLFindByName(mvBodies, sSubName);
 					if(pBody==NULL){
 						Error("Cannot find sub entity '%s' in mesh '%s'\n", sSubName.c_str(),mpMesh->GetName().c_str());
 						continue;
@@ -281,7 +281,7 @@ namespace hpl {
 			{
 				tString sName = asName + "_" + cString::ToString(pJointElem->Attribute("Name"),"");
 
-				iPhysicsJoint *pJoint = (iPhysicsJoint*)STLFindByName(mvJoints,sName);
+				iPhysicsJoint *pJoint = STLFindByName(mvJoints,sName);
 				if(pJoint)
 				{
 					SetJointProperties(pJoint,pJointElem,apWorld);
@@ -343,7 +343,7 @@ namespace hpl {
 				}
 				else
 				{
-					pBody = (iPhysicsBody*)STLFindByName(mvBodies, sSubName);
+					pBody = STLFindByName(mvBodies, sSubName);
 					if(pBody==NULL){
 						Error("Cannot find sub entity '%s' in mesh '%s'\n", sSubName.c_str(),mpMesh->GetName().c_str());
 						continue;
@@ -526,7 +526,7 @@ namespace hpl {
 		{
 			tString sName = cString::ToString(pLightElem->Attribute("Name"),"");
 
-			iLight3D *pLight = (iLight3D*)STLFindByName(mvLights,asName+"_"+sName);
+			iLight3D *pLight = STLFindByName(mvLights,asName+"_"+sName);
 			if(pLight == NULL){
 				Error("Couldn't find light %s among entity %s type: %s lights\n",sName.c_str(),	asName.c_str(),	asFileName.c_str());
 				continue;

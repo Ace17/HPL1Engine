@@ -599,7 +599,7 @@ namespace hpl {
 
 	iWidget * cGuiSet::GetWidgetFromName(const tString& asName)
 	{
-		return (iWidget*)STLFindByName(mlstWidgets, asName);
+		return STLFindByName(mlstWidgets, asName);
 	}
 
 	//-----------------------------------------------------------------------

@@ -610,7 +610,7 @@ namespace hpl {
 
 	cBillboard* cWorld3D::GetBillboard(const tString& asName)
 	{
-		return (cBillboard*)STLFindByName(mlstBillboards,asName);
+		return STLFindByName(mlstBillboards,asName);
 	}
 
 	//-----------------------------------------------------------------------
@@ -646,7 +646,7 @@ namespace hpl {
 
 	cBeam* cWorld3D::GetBeam(const tString& asName)
 	{
-		return (cBeam*)STLFindByName(mlstBeams,asName);
+		return STLFindByName(mlstBeams,asName);
 	}
 
 	//-----------------------------------------------------------------------
@@ -708,7 +708,7 @@ namespace hpl {
 
 	cParticleSystem3D* cWorld3D::GetParticleSystem(const tString& asName)
 	{
-		return (cParticleSystem3D*)STLFindByName(mlstParticleSystems,asName);
+		return STLFindByName(mlstParticleSystems,asName);
 	}
 
 	//-----------------------------------------------------------------------
@@ -738,7 +738,7 @@ namespace hpl {
 	}
 	cColliderEntity* cWorld3D::GetColliderEntity(const tString& asName)
 	{
-		return (cColliderEntity*)STLFindByName(mlstColliders,asName);
+		return STLFindByName(mlstColliders,asName);
 	}
 
 	//-----------------------------------------------------------------------
@@ -808,7 +808,7 @@ namespace hpl {
 
 	cSoundEntity* cWorld3D::GetSoundEntity(const tString& asName)
 	{
-		return (cSoundEntity*)STLFindByName(mlstSoundEntities,asName);
+		return STLFindByName(mlstSoundEntities,asName);
 	}
 
 	bool cWorld3D::SoundEntityExists(cSoundEntity* apEntity)
@@ -835,7 +835,7 @@ namespace hpl {
 
 	cStartPosEntity* cWorld3D::GetStartPosEntity(const tString &asName)
 	{
-		return (cStartPosEntity*)STLFindByName(mlstStartPosEntities,asName);
+		return STLFindByName(mlstStartPosEntities,asName);
 	}
 
 	cStartPosEntity* cWorld3D::GetFirstStartPosEntity()
